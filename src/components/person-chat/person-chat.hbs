@@ -1,0 +1,17 @@
+<section class="person-chat">
+    <div class="person-chat__img">
+        <img src="../../images/no-photo.svg" alt="">
+    </div>
+    <div class="person-chat__info">
+        <div class="person-chat__row mb-1">
+            <span class="person-chat__author">{{ name }}</span>
+            <span class="person-chat__time">{{ datetime }}</span>
+        </div>
+        <div class="person-chat__row">
+            <span class="person-chat__message">{{ message }}</span>
+            {{#counter }}
+                <span class="person-chat__counter">{{ this }}</span>
+            {{/counter}}
+        </div>
+    </div>
+</section>

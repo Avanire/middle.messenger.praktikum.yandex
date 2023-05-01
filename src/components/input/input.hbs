@@ -1,0 +1,16 @@
+<div class="input-field">
+    <label for="{{ id }}" class="input-field__label">
+        {{ title }}
+        <input
+            type="{{ inputType }}"
+            value="{{ value }}"
+            id="{{ id }}"
+            class="input-field__input"
+            name="{{ inputName }}"
+            pattern="{{ pattern }}"
+            placeholder="{{ placeholder }}"
+            {{#required}}required{{/required}}
+        >
+        <span class="input-field__error">{{ errorMessage }}</span>
+    </label>
+</div>
