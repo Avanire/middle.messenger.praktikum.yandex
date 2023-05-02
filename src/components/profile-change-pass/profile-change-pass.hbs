@@ -1,6 +1,6 @@
 <section class="profile">
     <aside class="profile__return">
-        {{> arrow-button/arrow-button id="profile-return" prev=true }}
+        {{> arrow-button/arrow-button id="profile-return" prev=true type="button" }}
     </aside>
     <main class="container profile__content">
         <div class="profile__photo-wrapper mb-5">
@@ -12,7 +12,7 @@
                 {{> input/input id="newPassword" inputType="password" title="Новый пароль" inputName="newPassword" required=true }}
                 {{> input/input id="repeatPassword" inputType="password" title="Повторите новый пароль" inputName="repeatPassword" required=true }}
             </div>
-            {{> button/button id="save-pass" mixin="btn--prime" name="Сохранить" }}
+            {{> button/button id="save-pass" mixin="btn--prime" name="Сохранить" type="submit" }}
         </form>
     </main>
 </section>
