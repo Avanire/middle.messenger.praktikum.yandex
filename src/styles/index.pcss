@@ -1,0 +1,224 @@
+@import "variables.pcss";
+@import "spacing.pcss";
+@import "../components/button/button.pcss";
+@import "../components/input/input.pcss";
+@import "../pages/chat/chat.pcss";
+@import "../components/person-chat/person-chat.pcss";
+@import "../components/arrow-button/arrow-button.pcss";
+@import "../components/conversation/conversation.pcss";
+@import "../components/profile-setting/profile-setting.pcss";
+@import "../components/profile-edit-form/profile-edit-form.pcss";
+@import "../components/error-page/error-page.pcss";
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/Inter-Regular.woff') format('woff'), url("../fonts/Inter-Regular.woff2") format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/Inter-Medium.woff') format('woff'), url("../fonts/Inter-Medium.woff2") format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../fonts/Inter-SemiBold.woff') format('woff'), url("../fonts/Inter-SemiBold.woff2") format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/Inter-Bold.woff') format('woff'), url("../fonts/Inter-Bold.woff2") format('woff2');
+}
+
+:root {
+    box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: var(--white-color);
+}
+
+h1 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+    color: var(--head-color);
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 11px;
+    color: var(--main-color);
+    text-decoration: none;
+}
+
+a:visited {
+    color: var(--main-color);
+}
+
+.login {
+    &__inner {
+        background: var(--white-color);
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.14);
+        border-radius: 12px;
+        width: 340px;
+        padding: 50px 30px;
+        min-height: 450px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        text-align: center;
+    }
+}
+
+.signin {
+    @inherit: .login;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1 1 auto;
+
+    &__buttons {
+        margin-top: 47px;
+    }
+
+    &__link {
+        display: block;
+        text-align: center;
+        margin-top: 14px;
+    }
+}
+
+.signin-form {
+    @inherit: .login-form;
+}
+
+.overlay {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.4);
+    inset: 0;
+    display: none;
+}
+
+.modal {
+    position: fixed;
+    top: 250px;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: var(--white-color);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.14);
+    border-radius: 12px;
+    padding: 40px 30px;
+
+    &__title {
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 20px;
+        color: var(--head-color);
+        margin-bottom: 50px;
+    }
+}
+
+.add-user-form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 33px;
+}
+
+.delete-user-form {
+    @inherit .add-user-form;
+}
+
+.profile {
+    display: flex;
+
+    &__return {
+        flex: 0 0 64px;
+        background-color: var(--bg-chat-list);
+        border-right: 1px solid var(--border-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(-90%);
+        transition: transform 0.25s linear;
+
+        &:hover {
+            transform: translateX(0);
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__name {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 16px;
+        color: var(--head-color);
+    }
+
+    &__info-wrapper {
+        min-width: 510px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 60px;
+    }
+
+    &__settings {
+        display: flex;
+        flex-direction: column;
+        row-gap: 12px;
+    }
+
+    &__buttons {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+    }
+
+    &__link {
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--border-color);
+        font-size: 13px;
+
+        &--logout {
+            color: #FF0000;
+            border: unset;
+            background-color: transparent;
+            cursor: pointer;
+            padding: 0;
+        }
+    }
+}

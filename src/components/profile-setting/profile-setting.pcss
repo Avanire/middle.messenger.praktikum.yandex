@@ -1,0 +1,18 @@
+.profile-setting {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+
+    &__property {
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 13px;
+        color: var(--head-color);
+    }
+
+    &__value {
+        @inherit &__property;
+        color: var(--gray-color);
+    }
+}

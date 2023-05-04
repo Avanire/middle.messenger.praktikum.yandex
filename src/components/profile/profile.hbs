@@ -1,0 +1,28 @@
+<section class="profile">
+    <aside class="profile__return">
+        {{> arrow-button/arrow-button id="profile-return" prev=true type="button" }}
+    </aside>
+    <main class="container profile__content">
+        <div class="profile__photo-wrapper mb-5">
+            <img src="../../images/profile-no-photo.svg" alt="" class="profile__photo">
+        </div>
+        <div class="profile__name mb-14">{{ name }}</div>
+        <div class="profile__info-wrapper">
+            <div class="profile__settings">
+                {{> profile-setting/profile-setting property="Почта" value="pochta@yandex.ru" }}
+                {{> profile-setting/profile-setting property="Логин" value="ivanivanov" }}
+                {{> profile-setting/profile-setting property="Имя" value="Иван" }}
+                {{> profile-setting/profile-setting property="Фамилия" value="Иванов" }}
+                {{> profile-setting/profile-setting property="Имя в чате" value="Иван" }}
+                {{> profile-setting/profile-setting property="Телефон" value="+7 (909) 967 30 30" }}
+            </div>
+            <div class="profile__buttons">
+                <a href="../../pages/profile/profile-edit.hbs" class="profile__link">Изменить данные</a>
+                <a href="../../pages/profile/profile-change-pass.hbs" class="profile__link">Изменить пароль</a>
+                <form action="">
+                    <button class="profile__link profile__link--logout" type="submit">Выйти</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</section>
