@@ -56,7 +56,7 @@ class HttpTransport {
             if (isGetMethod || !data) {
                 xhr.send();
             } else {
-                xhr.send(data);
+                xhr.send(data as XMLHttpRequestBodyInit);
             }
         });
     }
