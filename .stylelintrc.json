@@ -1,5 +1,17 @@
 {
   "extends": "stylelint-config-standard",
-  "customSyntax": "postcss-lit",
-  "ignoreFiles": ["dist/*", "node_modules/*", ".parcel-cache"]
+  "rules": {
+    "at-rule-no-unknown": null,
+    "scss/at-rule-no-unknown": true,
+    "pcss/at-rule-no-unknown": true
+  },
+  "ignoreFiles": [
+    "dist/*"
+  ],
+  "overrides": [
+    {
+      "files": ["*.pcss"],
+      "customSyntax": "postcss-lit"
+    }
+  ]
 }
