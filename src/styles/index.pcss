@@ -1,14 +1,16 @@
 @import "variables.pcss";
 @import "spacing.pcss";
 @import "../components/button/button.pcss";
+@import "../components/input-wrapper/input-wrapper.pcss";
 @import "../components/input/input.pcss";
-@import "../pages/chat/chat.pcss";
+@import "../components/chat/chat.pcss";
 @import "../components/person-chat/person-chat.pcss";
 @import "../components/arrow-button/arrow-button.pcss";
 @import "../components/conversation/conversation.pcss";
 @import "../components/profile-setting/profile-setting.pcss";
 @import "../components/profile-edit-form/profile-edit-form.pcss";
 @import "../components/error-page/error-page.pcss";
+@import "../components/form-wrapper/form-wrapper.pcss";
 
 @font-face {
     font-family: 'Inter';
@@ -81,32 +83,17 @@ a:visited {
     color: var(--main-color);
 }
 
-.login {
-    &__inner {
-        background: var(--white-color);
-        box-shadow: 0 0 6px rgba(0, 0, 0, 0.14);
-        border-radius: 12px;
-        width: 340px;
-        padding: 50px 30px;
-        min-height: 450px;
-        display: flex;
-        flex-direction: column;
-    }
-
-    &__title {
-        text-align: center;
-    }
-}
-
-.signin {
-    @inherit: .login;
-}
-
 .login-form {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     flex: 1 1 auto;
+
+    &__inputs {
+        display: flex;
+        flex-direction: column;
+        row-gap: 12px;
+    }
 
     &__buttons {
         margin-top: 47px;
@@ -128,6 +115,10 @@ a:visited {
     background-color: rgba(0, 0, 0, 0.4);
     inset: 0;
     display: none;
+
+    &--active {
+        display: block;
+    }
 }
 
 .modal {
@@ -139,6 +130,7 @@ a:visited {
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.14);
     border-radius: 12px;
     padding: 40px 30px;
+    display: none;
 
     &__title {
         font-weight: 500;
@@ -146,6 +138,11 @@ a:visited {
         line-height: 20px;
         color: var(--head-color);
         margin-bottom: 50px;
+    }
+
+    &--active {
+        display: block;
+        z-index: 10;
     }
 }
 
