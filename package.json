@@ -7,7 +7,7 @@
     "build": "parcel build src/index.html",
     "start": "parcel build src/index.html && node server.js",
     "eslint": "eslint",
-    "stylelint": "stylelint"
+    "stylelint": "stylelint src/**/*.{pcss,css}"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
     "postcss-lit": "^1.1.0",
     "postcss-nested": "^6.0.1",
     "stylelint": "^15.6.2",
+    "stylelint-config-recommended": "^12.0.0",
     "stylelint-config-standard": "^33.0.0",
     "typescript": "^5.0.4",
     "uuid": "^9.0.0"

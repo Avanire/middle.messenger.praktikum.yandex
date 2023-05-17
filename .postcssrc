@@ -1,6 +1,7 @@
 {
   "plugins": {
     "postcss-nested": true,
-    "postcss-inherit": true
+    "postcss-inherit": true,
+    "postcss-lit": true
   }
 }
