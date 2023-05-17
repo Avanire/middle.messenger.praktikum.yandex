@@ -2,9 +2,10 @@ import Block from '../../utils/block.ts';
 import {
     EMAIL_REGEXP, LOGIN_REGEXP, NAME_REGEXP, PASSWORD_REGEXP, PHONE_REGEXP,
 } from '../../utils/constant.ts';
+import { TProps } from '../../utils/types.ts';
 
 export default class SigninForm extends Block {
-    constructor(props) {
+    constructor(props: TProps) {
         super({
             ...props,
             events: {
@@ -13,10 +14,10 @@ export default class SigninForm extends Block {
         });
     }
 
-    handler(e) {
+    handler(e: Event) {
         e.preventDefault();
 
-        const formData = new FormData(e.target);
+        const formData = new FormData(e.target as HTMLFormElement);
 
         // eslint-disable-next-line no-console
         console.log(formData);

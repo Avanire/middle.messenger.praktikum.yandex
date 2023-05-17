@@ -7,8 +7,14 @@ export default class Input extends Block {
         super({
             ...props,
             events: {
-                focus: (e) => validate(e.target, e.target.attributes.pattern.value),
-                blur: (e) => validate(e.target, e.target.attributes.pattern.value),
+                focus: (e: MouseEvent) => {
+                    const inputTarget = e.target as HTMLInputElement;
+                    validate(inputTarget, inputTarget.pattern);
+                },
+                blur: (e: MouseEvent) => {
+                    const inputTarget: HTMLInputElement = e.target as HTMLInputElement;
+                    validate(inputTarget, inputTarget.pattern);
+                },
             },
         });
     }

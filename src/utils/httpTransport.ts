@@ -8,15 +8,15 @@ class HttpTransport {
         return this.request(url, { ...options, method: METHODS.GET }, options.timeout);
     }
 
-    post(url, options: TOptionsWithoutMethod = {}): Promise<XMLHttpRequest> {
+    post(url: string, options: TOptionsWithoutMethod = {}): Promise<XMLHttpRequest> {
         return this.request(url, { ...options, method: METHODS.POST }, options.timeout);
     }
 
-    put(url, options: TOptionsWithoutMethod = {}): Promise<XMLHttpRequest> {
+    put(url: string, options: TOptionsWithoutMethod = {}): Promise<XMLHttpRequest> {
         return this.request(url, { ...options, method: METHODS.PUT }, options.timeout);
     }
 
-    delete(url, options: TOptionsWithoutMethod = {}): Promise<XMLHttpRequest> {
+    delete(url: string, options: TOptionsWithoutMethod = {}): Promise<XMLHttpRequest> {
         return this.request(url, { ...options, method: METHODS.DELETE }, options.timeout);
     }
 

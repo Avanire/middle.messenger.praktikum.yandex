@@ -1,4 +1,4 @@
-export const deepEquals = (a, b): boolean => {
+export const deepEquals = (a: any, b: any): boolean => {
     if (a === b) {
         return true;
     }
@@ -26,7 +26,7 @@ export const deepEquals = (a, b): boolean => {
     return false;
 };
 
-export const queryStringify = (data: object): string => {
+export const queryStringify = (data: any): string => {
     const keys = Object.keys(data);
     return keys.reduce((result, key, index) => `${result}${key}=${data[key]}${index > 0 ? '&' : ''}`, '?');
 };

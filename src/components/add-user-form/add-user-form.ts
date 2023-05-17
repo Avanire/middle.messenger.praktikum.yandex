@@ -1,15 +1,16 @@
 import Block from '../../utils/block.ts';
 import { NAME_REGEXP } from '../../utils/constant.ts';
+import { TProps } from '../../utils/types.ts';
 
 export default class AddUserForm extends Block {
-    constructor(props) {
+    constructor(props: TProps) {
         super({
             ...props,
             events: {
-                submit: (e) => {
+                submit: (e: Event) => {
                     e.preventDefault();
 
-                    const formData = new FormData(e.target);
+                    const formData = new FormData(e.target as HTMLFormElement);
 
                     // eslint-disable-next-line no-console
                     console.log(formData);

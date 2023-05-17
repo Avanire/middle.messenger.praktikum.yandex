@@ -1,4 +1,4 @@
-export type TEventHandler = (...payload) => void
+export type TEventHandler = (...payload: Array<unknown>) => void
 
 export type TListeners = {
     [key: string]: Array<TEventHandler>,

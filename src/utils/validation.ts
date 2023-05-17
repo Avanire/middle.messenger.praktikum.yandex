@@ -1,4 +1,4 @@
-const validate = (elem: HTMLInputElement, regexp) => {
+const validate = (elem: HTMLInputElement, regexp: string) => {
     const errorContainer = elem.parentElement?.querySelector('.input-field__error');
     const pattern = new RegExp(regexp);
     const validatedInput = pattern.test(elem.value);

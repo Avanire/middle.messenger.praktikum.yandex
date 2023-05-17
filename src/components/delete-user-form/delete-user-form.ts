@@ -1,7 +1,8 @@
 import Block from '../../utils/block.ts';
+import { TProps } from '../../utils/types.ts';
 
 export default class DeleteUserForm extends Block {
-    constructor(props) {
+    constructor(props: TProps) {
         super(props);
     }
 

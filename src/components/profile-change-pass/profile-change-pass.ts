@@ -13,10 +13,10 @@ export default class ProfileChangePass extends Block {
         });
     }
 
-    handler(e) {
+    handler(e: Event) {
         e.preventDefault();
 
-        const formData = new FormData(e.target);
+        const formData = new FormData(e.target as HTMLFormElement);
 
         // eslint-disable-next-line no-console
         console.log(formData);

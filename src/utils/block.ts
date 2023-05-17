@@ -70,7 +70,7 @@ class Block {
         this.eventBus().emit(EVENTS.FLOW_CDM);
     }
 
-    _componentDidUpdate(oldProps, newProps): void {
+    _componentDidUpdate(oldProps: TProps, newProps: TProps): void {
         const response: boolean = this.componentDidUpdate(oldProps, newProps);
 
         if (!response) {
@@ -100,9 +100,10 @@ class Block {
         const { events } = this.props;
 
         if (events) {
-            Object.keys(events).forEach((eventName: string) => {
-                this._element.addEventListener(eventName, events[eventName]);
-            });
+            Object.entries(events as Record<string, () => void>)
+                .forEach(([eventName, callback]) => {
+                    this._element.addEventListener(eventName, callback);
+                });
         }
     }
 
@@ -110,9 +111,10 @@ class Block {
         const { events } = this.props;
 
         if (events) {
-            Object.keys(events).forEach((eventName: string) => {
-                this._element.removeEventListener(eventName, events[eventName]);
-            });
+            Object.entries(events as Record<string, () => void>)
+                .forEach(([eventName, callback]) => {
+                    this._element.removeEventListener(eventName, callback);
+                });
         }
     }
 

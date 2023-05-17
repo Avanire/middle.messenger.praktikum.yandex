@@ -2,16 +2,17 @@ import Block from '../../../utils/block.ts';
 import { MESSAGE_REGEXP } from '../../../utils/constant.ts';
 import photoIcon from '../../../images/photo-video-icon.svg';
 import fileIcon from '../../../images/file-icon.svg';
+import { TProps } from '../../../utils/types.ts';
 
 export default class ConversationFooter extends Block {
-    constructor(props) {
+    constructor(props: TProps) {
         super({
             ...props,
             events: {
-                submit: (e) => {
+                submit: (e: Event) => {
                     e.preventDefault();
 
-                    const formData = new FormData(e.target);
+                    const formData = new FormData(e.target as HTMLFormElement);
 
                     // eslint-disable-next-line no-console
                     console.log(formData);

@@ -2,6 +2,7 @@ import Block from '../../utils/block.ts';
 import statusIcon from '../../images/message-delivered-icon.svg';
 import { TMessage } from './type.ts';
 import exampleImage from '../../images/example-img-message.png';
+import { TProps } from '../../utils/types.ts';
 
 export default class Conversation extends Block {
     name: string;
@@ -10,7 +11,7 @@ export default class Conversation extends Block {
 
     messages: Array<TMessage>;
 
-    constructor(props) {
+    constructor(props: TProps) {
         super(props);
     }
 
