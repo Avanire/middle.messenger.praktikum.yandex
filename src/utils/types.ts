@@ -25,3 +25,5 @@ export type TOptions = {
 }
 
 export type TOptionsWithoutMethod = Omit<TOptions, 'method'>;
+
+export type HTTPMethod = (url: string, options?: TOptionsWithoutMethod) => Promise<XMLHttpRequest>;

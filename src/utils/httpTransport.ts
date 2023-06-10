@@ -1,24 +1,24 @@
-import { TOptions, TOptionsWithoutMethod } from './types.ts';
+import { HTTPMethod, TOptions } from './types.ts';
 import { METHODS } from './constant.ts';
 import { queryStringify } from './utils.ts';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 class HttpTransport {
-    get(url: string, options: TOptionsWithoutMethod = {}): Promise<XMLHttpRequest> {
-        return this.request(url, { ...options, method: METHODS.GET }, options.timeout);
-    }
+    get: HTTPMethod = (url, options = {}) => (
+        this.request(url, { ...options, method: METHODS.GET }, options.timeout)
+    );
 
-    post(url: string, options: TOptionsWithoutMethod = {}): Promise<XMLHttpRequest> {
-        return this.request(url, { ...options, method: METHODS.POST }, options.timeout);
-    }
+    post: HTTPMethod = (url, options = {}) => (
+        this.request(url, { ...options, method: METHODS.POST }, options.timeout)
+    );
 
-    put(url: string, options: TOptionsWithoutMethod = {}): Promise<XMLHttpRequest> {
-        return this.request(url, { ...options, method: METHODS.PUT }, options.timeout);
-    }
+    put: HTTPMethod = (url, options = {}) => (
+        this.request(url, { ...options, method: METHODS.PUT }, options.timeout)
+    );
 
-    delete(url: string, options: TOptionsWithoutMethod = {}): Promise<XMLHttpRequest> {
-        return this.request(url, { ...options, method: METHODS.DELETE }, options.timeout);
-    }
+    delete: HTTPMethod = (url, options = {}) => (
+        this.request(url, { ...options, method: METHODS.DELETE }, options.timeout)
+    );
 
     request(
         url: string,
