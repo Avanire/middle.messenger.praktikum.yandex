@@ -1,6 +1,11 @@
 # Мессенджер - учебный проект для Яндекс.Практикум
 
-Проект аналог мессенджера WhatsApp, Telegram написанный на JS (TypeScript).
+Проект аналог мессенджера WhatsApp, Telegram написанный на JS (TypeScript). 
+
+### Sprint 2
+- Добавлен ESLint. 
+- Проект разбит на компоненты с применением паттерна MVC.
+- Добавлен класс для работы с запросами API
 
 Дизайн-макет: https://www.figma.com/file/VB678Vh9RjemUmhaO0Grbt/Chat_external_link-(Copy) <br />
 Версия на Netlify: https://deploy--lucent-syrniki-f79600.netlify.app/
