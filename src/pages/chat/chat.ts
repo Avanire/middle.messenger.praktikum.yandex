@@ -1,6 +1,5 @@
 import Chat from '../../components/chat/chat.ts';
-import renderDOM from '../../utils/renderDOM.ts';
-import regNestedComponent from '../../utils/regNestedComponent.ts';
+import regNestedComponent from '../../core/regNestedComponent.ts';
 import PersonChat from '../../components/person-chat/person-chat.ts';
 import Conversation from '../../components/conversation/conversation.ts';
 import ConversationHeader from '../../components/conversation/conversation-header/conversation-header.ts';
@@ -14,6 +13,10 @@ import Input from '../../components/input/input.ts';
 import Button from '../../components/button/button.ts';
 import DeleteUserForm from '../../components/delete-user-form/delete-user-form.ts';
 import ModalDeleteUser from '../../components/modal-delete-user/modal-delete-user.ts';
+import ChatList from '../../components/chat-list/chat-list.ts';
+import Link from '../../components/link/link.ts';
+import EmptyConversation from '../../components/conversation/empty-conversation/empty-conversation.ts';
+import AttachedFile from '../../components/conversation/attached-file/attached-file.ts';
 
 regNestedComponent('PersonChat', PersonChat);
 regNestedComponent('Conversation', Conversation);
@@ -28,46 +31,18 @@ regNestedComponent('Input', Input);
 regNestedComponent('ButtonModal', Button);
 regNestedComponent('ModalDeleteUser', ModalDeleteUser);
 regNestedComponent('DeleteUserForm', DeleteUserForm);
+regNestedComponent('ChatList', ChatList);
+regNestedComponent('AddChatBtn', Button);
+regNestedComponent('AddUserBtn', Button);
+regNestedComponent('AddChatAvatar', Button);
+regNestedComponent('DeleteUserBtn', Button);
+regNestedComponent('DeleteChat', Button);
+regNestedComponent('OpenModalBtn', ArrowButton);
+regNestedComponent('OpenFileModal', ArrowButton);
+regNestedComponent('ProfileLink', Link);
+regNestedComponent('EmptyConversation', EmptyConversation);
+regNestedComponent('AttachedFile', AttachedFile);
 
-const chat = new Chat({});
+const ChatPage = new Chat({});
 
-renderDOM('root', chat);
-
-document.addEventListener('DOMContentLoaded', () => {
-    const attachFile = document.querySelector('.conversation-footer__attach-wrapper');
-    attachFile?.addEventListener('click', () => {
-        attachFile.classList.toggle('conversation-footer__attach-wrapper--active');
-        attachFile.querySelector('.attach-menu')?.classList.toggle('attach-menu--active');
-    });
-
-    const additionalMenu = document.querySelector('.conversation-header__additional-menu-wrapper');
-    additionalMenu?.addEventListener('click', () => {
-        additionalMenu.classList.toggle('conversation-header__additional-menu-wrapper--active');
-        additionalMenu.querySelector('.conversation-header__additional-menu')?.classList.toggle('additional-menu--active');
-    });
-
-    const addUserBtn = document.querySelector('#addUser');
-    const addUserModal = document.querySelector('#modalAddUser');
-
-    addUserBtn?.addEventListener('click', () => {
-        additionalMenu?.classList.remove('conversation-header__additional-menu-wrapper--active');
-        document.querySelector('.overlay')?.classList.add('overlay--active');
-        addUserModal?.classList.add('modal--active');
-    });
-
-    const removeUserBtn = document.querySelector('#removeUser');
-    const removeUserModal = document.querySelector('#modalDeleteUser');
-
-    removeUserBtn?.addEventListener('click', () => {
-        additionalMenu?.classList.remove('conversation-header__additional-menu-wrapper--active');
-        document.querySelector('.overlay')?.classList.add('overlay--active');
-        removeUserModal?.classList.add('modal--active');
-    });
-
-    const overlay = document.querySelector('.overlay');
-    overlay?.addEventListener('click', () => {
-        additionalMenu?.classList.remove('conversation-header__additional-menu-wrapper--active');
-        overlay.classList.remove('overlay--active');
-        document.querySelector('.modal--active')?.classList.remove('modal--active');
-    });
-});
+export default ChatPage;

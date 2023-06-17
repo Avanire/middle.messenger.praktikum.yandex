@@ -1,9 +1,9 @@
 import { v4 as makeUUID } from 'uuid';
-import * as Handlebars from 'handlebars';
-import EventBus from './eventBus.ts';
-import { TProps } from './types.ts';
-import { deepEquals } from './utils.ts';
-import { EVENTS } from './constant.ts';
+import Handlebars from 'handlebars';
+import EventBus from '../eventBus.ts';
+import { TProps } from '../../utils/types.ts';
+import { deepEquals } from '../../utils/utils.ts';
+import { EVENTS } from '../../utils/constant.ts';
 
 class Block {
     _element: HTMLElement;
@@ -29,6 +29,7 @@ class Block {
 
         this.eventBus = () => eventBus;
         this._registerEvents(eventBus);
+        this._makePropsProxy = this._makePropsProxy.bind(this);
         eventBus.emit(EVENTS.INIT);
     }
 
@@ -51,6 +52,7 @@ class Block {
         eventBus.on(EVENTS.INIT, this.init.bind(this));
         eventBus.on(EVENTS.FLOW_CDM, this._componentDidMount.bind(this));
         eventBus.on(EVENTS.FLOW_CDU, this._componentDidUpdate.bind(this));
+        eventBus.on(EVENTS.FLOW_CWU, this._componentWillUnmount.bind(this));
         eventBus.on(EVENTS.FLOW_RENDER, this._render.bind(this));
     }
 
@@ -58,7 +60,19 @@ class Block {
         this.eventBus().emit(EVENTS.FLOW_RENDER);
     }
 
+    _checkInDom() {
+        const elementInDOM = document.body.contains(this._element);
+
+        if (elementInDOM) {
+            setTimeout(() => this._checkInDom(), 1000);
+            return;
+        }
+
+        this.eventBus().emit(EVENTS.FLOW_CWU, this.props);
+    }
+
     _componentDidMount(): void {
+        this._checkInDom();
         this.componentDidMount();
     }
 
@@ -73,7 +87,7 @@ class Block {
     _componentDidUpdate(oldProps: TProps, newProps: TProps): void {
         const response: boolean = this.componentDidUpdate(oldProps, newProps);
 
-        if (!response) {
+        if (response) {
             return;
         }
 
@@ -82,6 +96,15 @@ class Block {
 
     componentDidUpdate(oldProps: TProps, newProps: TProps): boolean {
         return deepEquals(oldProps, newProps);
+    }
+
+    _componentWillUnmount() {
+        this.destroy();
+        this.componentWillUnmount();
+    }
+
+    public componentWillUnmount(): boolean {
+        return true;
     }
 
     setProps = (nextProps: TProps): void => {
@@ -176,30 +199,35 @@ class Block {
 
     _makePropsProxy(props: TProps) {
         return new Proxy(props, {
-            get(target: TProps, prop: string) {
+            get: (target: TProps, prop: string) => {
                 const value = target[prop];
                 return typeof value === 'function' ? value.bind(target) : value;
             },
-            set(target: TProps, prop: string, value) {
+            set: (target: TProps, prop: string, value) => {
                 const oldProps = { ...target };
 
                 target[prop] = value;
 
                 this.eventBus().emit(EVENTS.FLOW_CDU, oldProps, target);
+
                 return true;
             },
-            deleteProperty() {
+            deleteProperty: () => {
                 throw new Error('No access');
             },
         });
     }
 
     show(): void {
-        this.getContent().style.display = 'block';
+        this.getContent().style.display = 'flex';
     }
 
     hide(): void {
         this.getContent().style.display = 'none';
+    }
+
+    destroy() {
+        this._element.remove();
     }
 }
 

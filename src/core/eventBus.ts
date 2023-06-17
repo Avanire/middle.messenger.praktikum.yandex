@@ -1,4 +1,4 @@
-import { TEventHandler, TListeners } from './types.ts';
+import { TEventHandler, TListeners } from '../utils/types.ts';
 
 class EventBus {
     listeners: TListeners;

@@ -14,5 +14,27 @@ export enum EVENTS {
     INIT= 'init',
     FLOW_CDM = 'flow:component-did-mount',
     FLOW_CDU = 'flow:component-did-update',
+    FLOW_CWU = 'flow:component-will-unmount',
     FLOW_RENDER = 'flow:render',
+}
+
+export const API_URL = 'https://ya-praktikum.tech/api/v2';
+export const WS_URL = 'wss://ya-praktikum.tech/ws/chats';
+
+export enum ROUTES {
+    Index = '/',
+    Profile = '/profile',
+    ChangePass = '/profile/change-password',
+    Edit = '/profile/edit',
+    Signup = '/sign-up',
+    Chat = '/chat',
+    Page404 = '/404',
+    Page500 = '/500'
+}
+
+export enum SOCKET_LISTENERS {
+    Open = 'open',
+    Close = 'close',
+    Message = 'message',
+    Error = 'error'
 }

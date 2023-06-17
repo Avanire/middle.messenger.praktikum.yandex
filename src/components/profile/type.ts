@@ -1,3 +1,3 @@
-import { TProfileEditForm } from '../profile-edit-form/type.ts';
+import { TUser } from '../../utils/types.ts';
 
-export type TProfile = TProfileEditForm;
+export type TProfile = TUser;

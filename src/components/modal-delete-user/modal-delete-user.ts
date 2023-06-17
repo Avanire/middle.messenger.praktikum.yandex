@@ -1,4 +1,4 @@
-import Block from '../../utils/block.ts';
+import Block from '../../core/block/block.ts';
 import { TProps } from '../../utils/types.ts';
 
 export default class ModalDeleteUser extends Block {

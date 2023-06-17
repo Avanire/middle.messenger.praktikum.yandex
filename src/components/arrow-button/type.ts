@@ -1,5 +1,7 @@
 export type TArrowButton = {
     id: string,
     type: string,
-    prev: boolean
+    image: string,
+    onClick: () => void,
+    mixin: string
 }
