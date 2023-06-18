@@ -54,7 +54,7 @@ class HttpTransport {
 
             xhr.onload = () => {
                 if (xhr.status !== 200) {
-                    reject(new Error(`${xhr.status} - ${xhr.statusText}`));
+                    reject(xhr.response);
                 } else {
                     resolve(xhr.response);
                 }

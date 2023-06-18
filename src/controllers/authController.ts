@@ -19,7 +19,7 @@ class AuthController {
 
             Router.go(ROUTES.Chat);
         } catch (e) {
-            throw new Error(e.message);
+            throw new Error(e.reason);
         }
     }
 
@@ -31,7 +31,9 @@ class AuthController {
 
             Router.go(ROUTES.Chat);
         } catch (e) {
-            throw new Error(e.message);
+            if (e.reason === 'User already in system') {
+                Router.go('/chat');
+            }
         }
     }
 
@@ -41,7 +43,7 @@ class AuthController {
 
             store.set('user', user);
         } catch (e) {
-            throw new Error(e.message);
+            throw new Error(e.reason);
         }
     }
 
@@ -51,7 +53,7 @@ class AuthController {
 
             Router.go(ROUTES.Index);
         } catch (e) {
-            throw new Error(e.message);
+            throw new Error(e.reason);
         }
     }
 

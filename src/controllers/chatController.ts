@@ -21,7 +21,7 @@ class ChatController {
 
             store.set('chatList', list);
         } catch (e) {
-            throw new Error(e.message);
+            throw new Error(e.reason);
         }
     }
 
@@ -31,7 +31,7 @@ class ChatController {
 
             await this.getChats();
         } catch (e) {
-            throw new Error(e.message);
+            throw new Error(e.reason);
         }
     }
 
@@ -39,7 +39,7 @@ class ChatController {
         try {
             await this.api.addUser(data);
         } catch (e) {
-            throw new Error(e.message);
+            throw new Error(e.reason);
         }
     }
 
@@ -49,7 +49,7 @@ class ChatController {
 
             await this.getChats();
         } catch (e) {
-            throw new Error(e.message);
+            throw new Error(e.reason);
         }
     }
 
@@ -59,7 +59,7 @@ class ChatController {
 
             await this.getChats();
         } catch (e) {
-            throw new Error(e.message);
+            throw new Error(e.reason);
         }
     }
 
@@ -70,7 +70,7 @@ class ChatController {
             store.set('currentChatId', chatId);
             store.set('token', token);
         } catch (e) {
-            throw new Error(e.message);
+            throw new Error(e.reason);
         }
     }
 
@@ -85,9 +85,11 @@ class ChatController {
             this.socket.close();
         }
 
-        this.socket = new WsTransport(userId, currentChatId, token.token);
+        if (token?.token) {
+            this.socket = new WsTransport(userId, currentChatId, token.token);
 
-        this.socket.connect();
+            this.socket.connect();
+        }
     }
 
     async uploadFileToChat(formData: FormData) {
@@ -96,7 +98,7 @@ class ChatController {
 
             store.set('uploadFile', uploadedFile);
         } catch (e) {
-            throw new Error(e.message);
+            throw new Error(e.reason);
         }
     }
 

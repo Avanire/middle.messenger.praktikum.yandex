@@ -3,9 +3,9 @@ import { TSocketData } from '../utils/types.ts';
 import store from './store.ts';
 
 class WsTransport {
-    private userId: string;
+    private userId: number;
 
-    private chatId: string;
+    private chatId: number;
 
     private token: string;
 
@@ -13,7 +13,7 @@ class WsTransport {
 
     private ping: number;
 
-    constructor(userId: string, chatId: string, token: string) {
+    constructor(userId: number, chatId: number, token: string) {
         this.userId = userId;
         this.chatId = chatId;
         this.token = token;

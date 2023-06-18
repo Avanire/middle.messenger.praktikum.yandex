@@ -92,10 +92,14 @@ export type TStore = {
     user: TUser,
     chatList: Array<TChatList>
     currentChatId: number,
-    token: string,
-    messages: Array<TMessage>,
+    token: TToken | null,
+    messages: Array<TMessage> | null,
     userSearch: Array<TUser>,
-    uploadFile: TFile
+    uploadFile: TFile | null
+}
+
+export type TToken = {
+    token: string
 }
 
 export type TChangeProfileData = {
