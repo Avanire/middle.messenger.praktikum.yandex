@@ -17,6 +17,9 @@ import ChatList from '../../components/chat-list/chat-list.ts';
 import Link from '../../components/link/link.ts';
 import EmptyConversation from '../../components/conversation/empty-conversation/empty-conversation.ts';
 import AttachedFile from '../../components/conversation/attached-file/attached-file.ts';
+import ModalAddChatAvatar from '../../components/modal-add-chat-avatar/modal-add-chat-avatar.ts';
+import UploadChatAvatarForm
+    from '../../components/upload-chat-avatar-form/upload-chat-avatar-form.ts';
 
 regNestedComponent('PersonChat', PersonChat);
 regNestedComponent('Conversation', Conversation);
@@ -42,6 +45,9 @@ regNestedComponent('OpenFileModal', ArrowButton);
 regNestedComponent('ProfileLink', Link);
 regNestedComponent('EmptyConversation', EmptyConversation);
 regNestedComponent('AttachedFile', AttachedFile);
+regNestedComponent('ModalAddChatAvatar', ModalAddChatAvatar);
+regNestedComponent('UploadChatAvatarForm', UploadChatAvatarForm);
+regNestedComponent('SubmitAddAvatar', Button);
 
 const ChatPage = new Chat({});
 

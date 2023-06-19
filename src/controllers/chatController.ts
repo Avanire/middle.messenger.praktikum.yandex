@@ -63,6 +63,16 @@ class ChatController {
         }
     }
 
+    async addChatAvatar(data: FormData) {
+        try {
+            await this.api.addAvatar(data);
+
+            await this.getChats();
+        } catch (e) {
+            console.error(e.reason);
+        }
+    }
+
     async getToken(chatId: string) {
         try {
             const token = await this.api.getChatToken(chatId);

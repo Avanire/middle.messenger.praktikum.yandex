@@ -14,6 +14,7 @@ class PersonChat extends Block {
             onAddUser: (e: MouseEvent) => this.addUser(e),
             onDeleteUser: (e: MouseEvent) => this.deleteUser(e),
             onDeleteChat: (e: MouseEvent) => this.deleteChat(e),
+            onAddAvatar: (e: MouseEvent) => this.addAvatar(e),
             events: {
                 click: (e: MouseEvent) => this.openConversation(e),
             },
@@ -55,6 +56,17 @@ class PersonChat extends Block {
         store.set('currentChatId', this.props.id);
 
         document.querySelector('#modalDeleteUser')?.classList.add('modal--active');
+        document.querySelector('.overlay')?.classList.add('overlay--active');
+
+        this.closeModal();
+    }
+
+    addAvatar(e: MouseEvent) {
+        e.stopPropagation();
+
+        store.set('currentChatId', this.props.id);
+
+        document.querySelector('#modalAddChatAvatar')?.classList.add('modal--active');
         document.querySelector('.overlay')?.classList.add('overlay--active');
 
         this.closeModal();
@@ -126,6 +138,12 @@ class PersonChat extends Block {
                             type='button' 
                             name='Удалить чат'
                             onClick=onDeleteChat
+                        }}}
+                        {{{ AddChatAvatar 
+                            id='add-avatar' 
+                            type='button' 
+                            name='Добавить аватар'
+                            onClick=onAddAvatar
                         }}}
                     </div>
                 </div>                
