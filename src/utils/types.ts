@@ -85,7 +85,8 @@ export type TChatList = {
     },
     title: string,
     unread_count: number,
-    onClick: () => void
+    onClick: () => void,
+    userName: string
 }
 
 export type TStore = {

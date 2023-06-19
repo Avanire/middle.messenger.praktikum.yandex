@@ -37,7 +37,9 @@ export default class ConversationFooter extends Block {
             ChatController.uploadFileToChat(formData).then(() => {
                 const { uploadFile } = store.getState();
 
-                ChatController.sendMessage({ content: uploadFile.id, type: 'file' });
+                if (uploadFile) {
+                    ChatController.sendMessage({ content: uploadFile.id, type: 'file' });
+                }
             });
         }
     }
@@ -46,7 +48,7 @@ export default class ConversationFooter extends Block {
         return `
             <form action="" class="conversation__footer conversation-footer" enctype="multipart/form-data">      
                 {{{ AttachedFile onChange=onChange }}}
-                <input type="text" name="message" id="message" placeholder="Сообщение" class="conversation-footer__message-to-send" pattern="${MESSAGE_REGEXP}">            
+                <input type="text" name="message" id="message" placeholder="Сообщение" class="conversation-footer__message-to-send" pattern="${MESSAGE_REGEXP}" required>            
                 {{{ ArrowButton id='conversation-footer__submit' type='submit' image='${arrowRight}' mixin='main-color' }}}
             </form>
         `;

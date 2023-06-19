@@ -4,6 +4,7 @@ import { TChatList } from '../../utils/types.ts';
 import dots from '../../images/dots.svg';
 import ChatController from '../../controllers/chatController.ts';
 import store from '../../core/store.ts';
+import { API_URL } from '../../utils/constant.ts';
 
 class PersonChat extends Block {
     constructor(props: TChatList) {
@@ -68,7 +69,7 @@ class PersonChat extends Block {
 
     render(): string {
         const {
-            name, message, counter, avatar, id,
+            name, message, counter, avatar, id, userName,
         } = this.props;
         const datetime = this.props.datetime as string;
         let time = '';
@@ -86,7 +87,7 @@ class PersonChat extends Block {
         return `
             <section class="person-chat" data-chatid="${id}">
                 <div class="person-chat__img">
-                    <img src="${avatar || noPhoto}" alt="">
+                    <img src="${avatar ? `${API_URL}/resources/${avatar}` : noPhoto}" alt="">
                 </div>
                 <div class="person-chat__info">
                     <div class="person-chat__row mb-1">
@@ -94,7 +95,7 @@ class PersonChat extends Block {
                         <span class="person-chat__time">${time}</span>
                     </div>
                     <div class="person-chat__row">
-                        <span class="person-chat__message">${message}</span>
+                        <span class="person-chat__message">${message ? `${userName}: ${message}` : ''}</span>
                         ${counter ? `<span class="person-chat__counter">${counter}</span>` : ''}
                     </div>
                 </div>

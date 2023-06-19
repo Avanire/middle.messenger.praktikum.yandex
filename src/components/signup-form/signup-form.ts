@@ -1,6 +1,6 @@
 import Block from '../../core/block/block.ts';
 import {
-    EMAIL_REGEXP, LOGIN_REGEXP, NAME_REGEXP, PASSWORD_REGEXP, PHONE_REGEXP,
+    EMAIL_REGEXP, LOGIN_REGEXP, NAME_REGEXP, PASSWORD_REGEXP, PHONE_REGEXP, ROUTES,
 } from '../../utils/constant.ts';
 import { SigninData, TProps } from '../../utils/types.ts';
 import { convertFormDataToObject } from '../../utils/utils.ts';
@@ -91,7 +91,7 @@ export default class SignupForm extends Block {
                         mixin='btn--prime' 
                         type='submit' 
                     }}}
-                    {{{ EnterLink to='/' text='Войти' mixin='link__center' }}}
+                    {{{ EnterLink to='${ROUTES.Index}' text='Войти' mixin='link__center' }}}
                 </div>
             </form>
         `;

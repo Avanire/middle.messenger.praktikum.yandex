@@ -19,7 +19,7 @@ class ProfileController {
 
             router.go(ROUTES.Profile);
         } catch (e) {
-            throw new Error(e.reason);
+            console.error(e.reason);
         }
     }
 
@@ -29,7 +29,7 @@ class ProfileController {
 
             router.go(ROUTES.Profile);
         } catch (e) {
-            throw new Error(e.reason);
+            console.error(e.reason);
         }
     }
 
@@ -41,7 +41,7 @@ class ProfileController {
 
             router.go(ROUTES.Profile);
         } catch (e) {
-            throw new Error(e.reason);
+            console.error(e.reason);
         }
     }
 
@@ -51,7 +51,7 @@ class ProfileController {
 
             store.set('userSearch', user);
         } catch (e) {
-            throw new Error(e.reason);
+            console.error(e.reason);
         }
     }
 }

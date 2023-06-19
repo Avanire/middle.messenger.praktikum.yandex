@@ -40,16 +40,20 @@ class WsTransport {
     }
 
     private messagesListener(e: MessageEvent) {
-        const data = JSON.parse(e.data) as TSocketData;
+        try {
+            const data = JSON.parse(e.data) as TSocketData;
 
-        if (data.type !== 'pong' && data.type !== 'user connected') {
-            const { messages } = store.getState();
+            if (data.type !== 'pong' && data.type !== 'user connected') {
+                const { messages } = store.getState();
 
-            if (messages) {
-                store.set('messages', [...messages, data]);
-            } else {
-                store.set('messages', [...data].reverse());
+                if (messages) {
+                    store.set('messages', [...messages, data]);
+                } else {
+                    store.set('messages', [...data].reverse());
+                }
             }
+        } catch (err) {
+            console.error(err.message);
         }
     }
 

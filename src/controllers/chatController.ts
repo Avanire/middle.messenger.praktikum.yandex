@@ -21,7 +21,7 @@ class ChatController {
 
             store.set('chatList', list);
         } catch (e) {
-            throw new Error(e.reason);
+            console.error(e.reason);
         }
     }
 
@@ -31,7 +31,7 @@ class ChatController {
 
             await this.getChats();
         } catch (e) {
-            throw new Error(e.reason);
+            console.error(e.reason);
         }
     }
 
@@ -39,7 +39,7 @@ class ChatController {
         try {
             await this.api.addUser(data);
         } catch (e) {
-            throw new Error(e.reason);
+            console.error(e.reason);
         }
     }
 
@@ -49,7 +49,7 @@ class ChatController {
 
             await this.getChats();
         } catch (e) {
-            throw new Error(e.reason);
+            console.error(e.reason);
         }
     }
 
@@ -59,7 +59,7 @@ class ChatController {
 
             await this.getChats();
         } catch (e) {
-            throw new Error(e.reason);
+            console.error(e.reason);
         }
     }
 
@@ -70,7 +70,7 @@ class ChatController {
             store.set('currentChatId', chatId);
             store.set('token', token);
         } catch (e) {
-            throw new Error(e.reason);
+            console.error(e.reason);
         }
     }
 
@@ -98,7 +98,7 @@ class ChatController {
 
             store.set('uploadFile', uploadedFile);
         } catch (e) {
-            throw new Error(e.reason);
+            console.error(e.reason);
         }
     }
 

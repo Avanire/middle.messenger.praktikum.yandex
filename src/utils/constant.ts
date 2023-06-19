@@ -23,11 +23,11 @@ export const WS_URL = 'wss://ya-praktikum.tech/ws/chats';
 
 export enum ROUTES {
     Index = '/',
-    Profile = '/profile',
-    ChangePass = '/profile/change-password',
-    Edit = '/profile/edit',
+    Profile = '/settings',
+    ChangePass = '/settings/change-password',
+    Edit = '/settings/edit',
     Signup = '/sign-up',
-    Chat = '/chat',
+    Chat = '/messenger',
     Page404 = '/404',
     Page500 = '/500'
 }

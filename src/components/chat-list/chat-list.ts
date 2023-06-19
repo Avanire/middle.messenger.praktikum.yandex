@@ -1,7 +1,7 @@
 import Block from '../../core/block/block.ts';
 import { convertFormDataToObject } from '../../utils/utils.ts';
 import ChatController from '../../controllers/chatController.ts';
-import { TChatList, TCreateChatData } from '../../utils/types.ts';
+import { TChatList, TCreateChatData, TUser } from '../../utils/types.ts';
 import withStore from '../../hocs/withStore.ts';
 
 class ChatList extends Block {
@@ -28,6 +28,7 @@ class ChatList extends Block {
 
     render(): string {
         const chatList = this.props.chatList as Array<TChatList>;
+        const user = this.props.user as TUser;
 
         return `
            <section class="chat-list">
@@ -57,15 +58,16 @@ class ChatList extends Block {
                      }}}
                </form>
                 <div class="chat-list__list">
-                    ${chatList ? chatList.map((chat: TChatList) => `
+                    ${chatList ? chatList.map((chat: TChatList) => `                        
                         {{{ PersonChat 
-                            name='${chat.last_message ? chat.last_message.user.first_name : chat.title}' 
+                            name='${chat.title}' 
                             datetime='${chat.last_message?.time ?? ''}' 
                             message='${chat.last_message?.content ?? ''}' 
                             counter='${chat.unread_count ? chat.unread_count : ''}'
                             avatar='${chat.avatar ?? ''}'
-                            id='${chat.id}'                     
-                        }}} 
+                            id='${chat.id}'
+                            userName='${user.login === chat.last_message?.user.login ? 'Вы' : chat.last_message?.user.first_name}'                 
+                        }}}
                         `).join('') : ''}                       
                 </div>
             </section>

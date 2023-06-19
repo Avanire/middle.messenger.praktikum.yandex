@@ -24,7 +24,7 @@ class Conversation extends Block {
                 <div class="conversation__chat chat">
                     <div class="chat__date"></div>
                     <div class="chat__messages">
-                        ${messages && messages.map((message) => `
+                        ${messages ? messages.map((message) => `
                             <div class="chat__message chat-message ${message.user_id === currentUser.id
         ? 'chat__message--answer' : ''} ${message.file ? 'chat__message--image'
     : ''}">
@@ -40,7 +40,7 @@ class Conversation extends Block {
                                     </span>
                                 </div>
                             </div>
-                        `).join('')}
+                        `).join('') : '<span class="">Загрузка...</span>'}
                     </div>
                 </div>
                 {{{ ConversationFooter }}}

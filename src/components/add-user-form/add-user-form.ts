@@ -33,6 +33,7 @@ export default class AddUserForm extends Block {
                             document.querySelector('.overlay')?.classList.remove('overlay--active');
                             alert('Пользователь добавлен');
                         }).catch(() => {
+                            document.querySelector('.overlay')?.classList.remove('overlay--active');
                             alert('Произошла ошибка попробуйте еще раз');
                         });
                     }

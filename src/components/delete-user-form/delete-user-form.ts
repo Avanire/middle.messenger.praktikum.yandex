@@ -33,6 +33,7 @@ export default class DeleteUserForm extends Block {
                             document.querySelector('.overlay')?.classList.remove('overlay--active');
                             alert('Пользователь удален');
                         }).catch(() => {
+                            document.querySelector('.overlay')?.classList.remove('overlay--active');
                             alert('Произошла ошибка попробуйте еще раз');
                         });
                     }

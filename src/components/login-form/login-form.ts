@@ -1,6 +1,6 @@
 import Block from '../../core/block/block.ts';
 import { LoginData, TGeneralProps } from '../../utils/types.ts';
-import { LOGIN_REGEXP, PASSWORD_REGEXP } from '../../utils/constant.ts';
+import { LOGIN_REGEXP, PASSWORD_REGEXP, ROUTES } from '../../utils/constant.ts';
 import { convertFormDataToObject } from '../../utils/utils.ts';
 import AuthController from '../../controllers/authController.ts';
 
@@ -48,7 +48,7 @@ class LoginForm extends Block {
                 </div>
                 <div class="login-form__buttons">        
                     {{{ Button mixin='btn--prime' id='login-wrapper-btn' name='Вход' type='submit' }}}
-                    {{{ NoAccLink to='/sign-up' text='Нет аккаунта?' mixin='link__center' }}}                    
+                    {{{ NoAccLink to='${ROUTES.Signup}' text='Нет аккаунта?' mixin='link__center' }}}                    
                 </div>
             </form>
         `;

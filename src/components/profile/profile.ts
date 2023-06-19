@@ -3,7 +3,7 @@ import noPhoto from '../../images/profile-no-photo.svg';
 import { TProfile } from './type.ts';
 import AuthController from '../../controllers/authController.ts';
 import withStore from '../../hocs/withStore.ts';
-import { API_URL } from '../../utils/constant.ts';
+import { API_URL, ROUTES } from '../../utils/constant.ts';
 
 class Profile extends Block {
     constructor(props: TProfile) {
@@ -54,8 +54,8 @@ class Profile extends Block {
                         {{{ ProfileSetting property="Телефон" value="${phone}" }}}
                     </div>
                     <div class="profile__buttons">
-                        {{{ EditLink to='/profile/edit' text='Изменить данные' }}}
-                        {{{ EditPass to='/profile/change-password' text='Изменить пароль' }}}
+                        {{{ EditLink to='${ROUTES.Edit}' text='Изменить данные' }}}
+                        {{{ EditPass to='${ROUTES.ChangePass}' text='Изменить пароль' }}}
                         <form action="">                            
                             <button class="profile__link profile__link--logout" type="submit">Выйти</button>
                         </form>
