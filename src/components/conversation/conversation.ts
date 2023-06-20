@@ -20,7 +20,7 @@ class Conversation extends Block {
 
         return `
             <section class="conversation">
-                {{{ ConversationHeader title='${chat?.title}' avatar=${chat?.avatar} }}}
+                {{{ ConversationHeader title='${chat?.title}' avatar='${chat?.avatar ?? ''}' }}}
                 <div class="conversation__chat chat">
                     <div class="chat__date"></div>
                     <div class="chat__messages">

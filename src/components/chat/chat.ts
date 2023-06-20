@@ -20,8 +20,9 @@ class Chat extends Block {
                 <section class="main-chat__conversation">
                     ${currentChatId ? '{{{ Conversation }}}' : '{{{ EmptyConversation }}}'}
                 </section>     
-                {{{ ModalAddUser head='Добавить пользователя' }}}
-                {{{ ModalDeleteUser head='Удалить пользователя' }}}
+                {{{ ModalAddUser }}}
+                {{{ ModalDeleteUser }}}
+                {{{ ModalAddChatAvatar }}}
             </main>            
         `;
     }

@@ -36,6 +36,10 @@ export class ChatApi extends BaseApi {
         data,
     });
 
+    addAvatar = (data: FormData) => this.http.put('/avatar', {
+        data,
+    });
+
     getChatToken = (data: string) => this.http.post(`/token/${data}`);
 
     getChatUsers = (id: string) => this.http.get(`/${id}/users`);
