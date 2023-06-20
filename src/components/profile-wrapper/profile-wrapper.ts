@@ -1,31 +1,36 @@
-import Block from '../../utils/block.ts';
-import { TProfileWrapper } from './type.ts';
+import Block from '../../core/block/block.ts';
+import { TProps } from '../../utils/types.ts';
+import Router from '../../core/router.ts';
+import arrowLeft from '../../images/arrow-left.svg';
 
-export default class ProfileWrapper extends Block {
-    constructor(props: TProfileWrapper) {
-        super(props);
+class ProfileWrapper extends Block {
+    constructor(props: TProps) {
+        super({
+            ...props,
+            onClick: () => this.handleClick(),
+        });
+    }
+
+    handleClick() {
+        Router.back();
     }
 
     render(): string {
-        const {
-            email, login, firstName, secondName, displayName, phone, image,
-        } = this.props;
-
         return `
             <section class="profile">
                 <aside class="profile__return">
-                    {{{ ArrowButton id='profile-return' prev='true' type='button' }}}                    
+                    {{{ ArrowButton 
+                        id='profile-return' 
+                        image='${arrowLeft}' 
+                        type='button' 
+                        onClick=onClick 
+                        mixin='main-color'
+                    }}}                    
                 </aside>
-                {{{ Children 
-                    email='${email}' 
-                    login='${login}' 
-                    firstName='${firstName}' 
-                    secondName='${secondName}'
-                    displayName='${displayName}'
-                    phone='${phone}'
-                    image='${image}'               
-                }}}
+                {{{ Children }}}
             </section>
         `;
     }
 }
+
+export default ProfileWrapper;

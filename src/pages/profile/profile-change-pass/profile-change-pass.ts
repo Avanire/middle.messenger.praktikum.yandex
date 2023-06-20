@@ -1,6 +1,5 @@
 import ProfileChangePass from '../../../components/profile-change-pass/profile-change-pass.ts';
-import renderDOM from '../../../utils/renderDOM.ts';
-import regNestedComponent from '../../../utils/regNestedComponent.ts';
+import regNestedComponent from '../../../core/regNestedComponent.ts';
 import ArrowButton from '../../../components/arrow-button/arrow-button.ts';
 import InputWrapper from '../../../components/input-wrapper/input-wrapper.ts';
 import Input from '../../../components/input/input.ts';
@@ -10,15 +9,7 @@ import ProfileWrapper from '../../../components/profile-wrapper/profile-wrapper.
 regNestedComponent('ArrowButton', ArrowButton);
 regNestedComponent('InputWrapper', InputWrapper);
 regNestedComponent('Input', Input);
-regNestedComponent('Button', Button);
+regNestedComponent('PassBtn', Button);
 regNestedComponent('Children', ProfileChangePass);
 
-const profileChangePass = new ProfileWrapper({});
-
-renderDOM('root', profileChangePass);
-
-const arrowBack = document.querySelector('.profile__return');
-arrowBack?.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.history.back();
-});
+export default new ProfileWrapper({});

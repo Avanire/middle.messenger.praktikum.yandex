@@ -1,12 +1,17 @@
 .person-chat {
     display: flex;
     border-top: 1px solid #EAEAEA;
-    padding: 12px 0;
+    padding: 12px 4px;
     column-gap: 10px;
     position: relative;
     &__img {
-        border-radius: 100%;
         flex: 0 0 47px;
+    }
+    &__img img {
+        width: 47px;
+        height: 47px;
+        border-radius: 100%;
+        object-fit: cover;
     }
     &__info {
         flex: 1 1 auto;
@@ -32,7 +37,7 @@
         font-size: 12px;
         line-height: 15px;
         color: var(--gray-color);
-        flex: 0 0 193px;
+        flex: 0 0 165px;
         overflow: hidden;
         height: 30px;
         text-overflow: ellipsis;
@@ -45,18 +50,32 @@
         background-color: var(--main-color);
         border-radius: 100%;
         align-self: end;
-        padding: 4px 6px;
+        padding: 4px 7px;
     }
     &:hover {
-        &::before {
-            content: '';
-            background-color: #3369F3;
-            opacity: 0.2;
-            position: absolute;
-            left: -10px;
-            right: -10px;
-            top: 2px;
-            bottom: 2px;
-        }
+        background-color: rgba(51,105,243, 0.3);
+    }
+    &__additional-menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        border-left: 1px solid #EAEAEA;
+        padding-left: 4px;
+    }
+    &__additional-menu {
+        position: absolute;
+        left: 45px;
+        top: 0;
+        background: #fff;
+        padding: 8px 12px;
+        z-index: 100;
+        border-radius: 6px;
+        min-width: 150px;
+        box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+        display: none;
+    }
+    &__additional-menu--active {
+        display: block;
     }
 }

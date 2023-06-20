@@ -1,4 +1,4 @@
-import Block from '../../utils/block.ts';
+import Block from '../../core/block/block.ts';
 import { TProfileSetting } from './type.ts';
 
 export default class ProfileSetting extends Block {

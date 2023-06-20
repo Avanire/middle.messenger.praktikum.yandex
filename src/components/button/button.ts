@@ -1,9 +1,14 @@
-import Block from '../../utils/block.ts';
+import Block from '../../core/block/block.ts';
 import { TButtonProps } from './type.ts';
 
 export default class Button extends Block {
     constructor(props: TButtonProps) {
-        super(props);
+        super({
+            ...props,
+            events: {
+                click: props.onClick,
+            },
+        });
     }
 
     render(): string {

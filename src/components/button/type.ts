@@ -5,4 +5,5 @@ export type TButtonProps = {
     id: string,
     type: string,
     name: string
+    onClick: () => void
 } & TGeneralProps;

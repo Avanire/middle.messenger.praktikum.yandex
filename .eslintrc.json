@@ -21,6 +21,11 @@
     "no-use-before-define": 0,
     "no-useless-constructor": 0,
     "no-shadow": "off",
-    "@typescript-eslint/no-shadow": "error"
+    "@typescript-eslint/no-shadow": "error",
+    "no-constructor-return": 0,
+    "no-continue": 0,
+    "no-alert": 0,
+    "no-console": 0,
+    "linebreak-style": 0
   }
 }

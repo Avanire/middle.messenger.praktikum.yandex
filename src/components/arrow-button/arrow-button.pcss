@@ -1,13 +1,14 @@
 .arrow-button {
-    background-color: var(--main-color);
+    background-color: transparent;
     width: 28px;
     height: 28px;
     border-radius: 100%;
     border: unset;
     cursor: pointer;
-    &__arrow {
-        &--prev {
-            transform: rotate(180deg);
-        }
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main-color {
+    background-color: var(--main-color);
 }

@@ -8,9 +8,14 @@
 @import '../components/arrow-button/arrow-button.pcss';
 @import '../components/conversation/conversation.pcss';
 @import '../components/profile-setting/profile-setting.pcss';
-@import '../components/profile-edit-form/profile-edit-form.pcss';
+@import '../components/profile/profile.pcss';
+@import '../components/profile-avatar/profile-avatar.pcss';
 @import '../components/error-page/error-page.pcss';
 @import '../components/form-wrapper/form-wrapper.pcss';
+@import '../components/chat-list/chat-list.pcss';
+@import '../components/link/link.pcss';
+@import '../components/conversation/empty-conversation/empty-conversation.pcss';
+@import '../components/conversation/conversation-header/conversation-header.pcss';
 
 @font-face {
     font-family: 'Inter';
@@ -87,11 +92,9 @@ a:visited {
     }
     &__buttons {
         margin-top: 47px;
-    }
-    &__link {
-        display: block;
-        text-align: center;
-        margin-top: 14px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 12px;
     }
 }
 .signin-form {
@@ -145,7 +148,7 @@ a:visited {
         display: flex;
         align-items: center;
         justify-content: center;
-        transform: translateX(-90%);
+        transform: translateX(-60%);
         transition: transform 0.25s linear;
         &:hover {
             transform: translateX(0);

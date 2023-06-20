@@ -1,4 +1,4 @@
 export type TConversationHeader = {
-    name: string,
-    image?: string
+    title: string,
+    avatar?: string
 }

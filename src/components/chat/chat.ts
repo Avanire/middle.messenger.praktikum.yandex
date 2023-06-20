@@ -1,44 +1,33 @@
-import Block from '../../utils/block.ts';
+import Block from '../../core/block/block.ts';
+import withStore from '../../hocs/withStore.ts';
 import { TProps } from '../../utils/types.ts';
+import { ROUTES } from '../../utils/constant.ts';
 
-export default class Chat extends Block {
+class Chat extends Block {
     constructor(props: TProps) {
         super(props);
     }
 
     render(): string {
+        const { currentChatId } = this.props;
+
         return `
             <main class="main-chat">
                 <aside class="main-chat__sidebar">
-                    <a href="../../pages/profile/profile.html" class="main-chat__link mb-6">Профиль</a>
-                    <label for="chat-search">
-                        <input type="text" name="chat-search" id="chat-search" placeholder="Поиск" class="main-chat__search-input mb-4">
-                    </label>
-                    <div class="main-chat__list">
-                        {{{ PersonChat 
-                                name='Андрей' 
-                                datetime='10:49' 
-                                message='Сообщение не особо длинное' 
-                        }}}
-                        {{{ PersonChat 
-                                name='Антон' 
-                                datetime='Ср' 
-                                message='Друзья, у меня для вас особенный выпуск новостей! Друзья, у меня для вас' 
-                                counter='4' 
-                        }}}
-                        {{{ PersonChat 
-                                name='Вероника' 
-                                datetime='Вс' 
-                                message='Друзья, у меня для вас особенный выпуск новостей! Друзья, у меня для вас' 
-                        }}}
-                    </div>
+                    {{{ ProfileLink to='${ROUTES.Profile}' mixin='main-chat__link mb-6' text='Профиль' }}}                    
+                    {{{ ChatList }}}
                 </aside>
                 <section class="main-chat__conversation">
-                    {{{ Conversation }}}
+                    ${currentChatId ? '{{{ Conversation }}}' : '{{{ EmptyConversation }}}'}
                 </section>     
-                {{{ ModalAddUser head='Добавить пользователя' }}}
-                {{{ ModalDeleteUser head='Удалить пользователя' }}}
+                {{{ ModalAddUser }}}
+                {{{ ModalDeleteUser }}}
+                {{{ ModalAddChatAvatar }}}
             </main>            
         `;
     }
 }
+
+const whitChats = withStore((state) => ({ ...state }));
+
+export default whitChats(Chat);
