@@ -1,9 +1,9 @@
-import Block from '../../core/block/block.ts';
+import Block from '../../core/block/block';
 import noPhoto from '../../images/profile-no-photo.svg';
-import { TProfile } from './type.ts';
-import AuthController from '../../controllers/authController.ts';
-import withStore from '../../hocs/withStore.ts';
-import { API_URL, ROUTES } from '../../utils/constant.ts';
+import { TProfile } from './type';
+import AuthController from '../../controllers/authController';
+import withStore from '../../hocs/withStore';
+import { API_URL, ROUTES } from '../../utils/constant';
 
 class Profile extends Block {
     constructor(props: TProfile) {
@@ -66,6 +66,6 @@ class Profile extends Block {
     }
 }
 
-const withUser = withStore((state) => ({ ...state.user }));
+const withUser = withStore(state => ({ ...state.user }));
 
 export default withUser(Profile);

@@ -1,12 +1,12 @@
-import Block from '../../core/block/block.ts';
+import Block from '../../core/block/block';
 import {
     EMAIL_REGEXP, LOGIN_REGEXP, NAME_REGEXP, PHONE_REGEXP,
-} from '../../utils/constant.ts';
-import { TProfileEditForm } from './type.ts';
-import withStore from '../../hocs/withStore.ts';
-import { convertFormDataToObject } from '../../utils/utils.ts';
-import ProfileController from '../../controllers/profileController.ts';
-import { TChangeProfileData } from '../../utils/types.ts';
+} from '../../utils/constant';
+import { TProfileEditForm } from './type';
+import withStore from '../../hocs/withStore';
+import { convertFormDataToObject } from '../../utils/utils';
+import ProfileController from '../../controllers/profileController';
+import { TChangeProfileData } from '../../utils/types';
 
 class ProfileEditForm extends Block {
     constructor(props: TProfileEditForm) {
@@ -113,6 +113,6 @@ class ProfileEditForm extends Block {
     }
 }
 
-const withUser = withStore((state) => ({ ...state.user }));
+const withUser = withStore(state => ({ ...state.user }));
 
 export default withUser(ProfileEditForm);

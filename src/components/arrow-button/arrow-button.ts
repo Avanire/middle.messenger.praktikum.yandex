@@ -1,5 +1,5 @@
-import Block from '../../core/block/block.ts';
-import { TArrowButton } from './type.ts';
+import Block from '../../core/block/block';
+import { TArrowButton } from './type';
 
 export default class ArrowButton extends Block {
     constructor(props: TArrowButton) {

@@ -1,7 +1,7 @@
-import Block from '../../../core/block/block.ts';
+import Block from '../../../core/block/block';
 import noPhoto from '../../../images/no-photo.svg';
-import { TConversationHeader } from './type.ts';
-import { API_URL } from '../../../utils/constant.ts';
+import { TConversationHeader } from './type';
+import { API_URL } from '../../../utils/constant';
 
 export default class ConversationHeader extends Block {
     constructor(props: TConversationHeader) {

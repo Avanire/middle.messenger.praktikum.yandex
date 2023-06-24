@@ -1,5 +1,5 @@
-import Block from '../../../../core/block/block.ts';
-import { TButton } from './type.ts';
+import Block from '../../../../core/block/block';
+import { TButton } from './type';
 
 export default class Button extends Block {
     constructor(props: TButton) {

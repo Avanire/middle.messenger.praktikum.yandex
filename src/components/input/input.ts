@@ -1,6 +1,6 @@
-import Block from '../../core/block/block.ts';
-import { TInput } from './type.ts';
-import validate from '../../utils/validation.ts';
+import Block from '../../core/block/block';
+import { TInput } from './type';
+import validate from '../../utils/validation';
 
 export default class Input extends Block {
     constructor(props: TInput) {

@@ -1,8 +1,8 @@
 import * as Handlebars from 'handlebars';
-import Block from './block/block.ts';
+import Block from './block/block';
 
 const regNestedComponent = (name: string, Component: typeof Block) => {
-    Handlebars.registerHelper(name, (context) => {
+    Handlebars.registerHelper(name, context => {
         if (!context.data.root.children) {
             context.data.root.children = {};
         }

@@ -1,5 +1,5 @@
-import Block from './block/block.ts';
-import renderDOM from './renderDOM.ts';
+import Block from './block/block';
+import renderDOM from './renderDOM';
 
 class Route {
     private _pathname: string;

@@ -1,4 +1,4 @@
-import { TEventHandler, TListeners } from '../utils/types.ts';
+import { TEventHandler, TListeners } from '../utils/types';
 
 class EventBus {
     listeners: TListeners;
@@ -21,7 +21,7 @@ class EventBus {
         }
 
         this.listeners[event] = this.listeners[event]
-            .filter((listener) => listener !== callback);
+            .filter(listener => listener !== callback);
     }
 
     emit(event: string, ...payload: Array<unknown>): void {
@@ -29,7 +29,7 @@ class EventBus {
             throw new Error(`No event ${event}`);
         }
 
-        this.listeners[event].forEach((listener) => {
+        this.listeners[event].forEach(listener => {
             listener(...payload);
         });
     }

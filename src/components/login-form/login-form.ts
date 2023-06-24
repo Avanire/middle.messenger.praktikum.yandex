@@ -1,8 +1,8 @@
-import Block from '../../core/block/block.ts';
-import { LoginData, TGeneralProps } from '../../utils/types.ts';
-import { LOGIN_REGEXP, PASSWORD_REGEXP, ROUTES } from '../../utils/constant.ts';
-import { convertFormDataToObject } from '../../utils/utils.ts';
-import AuthController from '../../controllers/authController.ts';
+import Block from '../../core/block/block';
+import { LoginData, TGeneralProps } from '../../utils/types';
+import { LOGIN_REGEXP, PASSWORD_REGEXP, ROUTES } from '../../utils/constant';
+import { convertFormDataToObject } from '../../utils/utils';
+import AuthController from '../../controllers/authController';
 
 class LoginForm extends Block {
     constructor(props: TGeneralProps) {

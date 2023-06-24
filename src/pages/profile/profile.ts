@@ -1,9 +1,9 @@
-import Profile from '../../components/profile/profile.ts';
-import regNestedComponent from '../../core/regNestedComponent.ts';
-import ArrowButton from '../../components/arrow-button/arrow-button.ts';
-import ProfileSetting from '../../components/profile-setting/profile-setting.ts';
-import ProfileWrapper from '../../components/profile-wrapper/profile-wrapper.ts';
-import Link from '../../components/link/link.ts';
+import Profile from '../../components/profile/profile';
+import regNestedComponent from '../../core/regNestedComponent';
+import ArrowButton from '../../components/arrow-button/arrow-button';
+import ProfileSetting from '../../components/profile-setting/profile-setting';
+import ProfileWrapper from '../../components/profile-wrapper/profile-wrapper';
+import Link from '../../components/link/link';
 
 regNestedComponent('ArrowButton', ArrowButton);
 regNestedComponent('ProfileSetting', ProfileSetting);

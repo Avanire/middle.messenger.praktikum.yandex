@@ -1,8 +1,8 @@
-import API, { ProfileApi } from '../api/profileApi.ts';
-import { TChangeProfileData, TChangeProfilePass, TSearchLogin } from '../utils/types.ts';
-import router from '../core/router.ts';
-import { ROUTES } from '../utils/constant.ts';
-import store from '../core/store.ts';
+import API, { ProfileApi } from '../api/profileApi';
+import { TChangeProfileData, TChangeProfilePass, TSearchLogin } from '../utils/types';
+import router from '../core/router';
+import { ROUTES } from '../utils/constant';
+import store from '../core/store';
 
 class ProfileController {
     private api: ProfileApi;

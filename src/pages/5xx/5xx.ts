@@ -1,4 +1,4 @@
-import ErrorPage from '../../components/error-page/error-page.ts';
+import ErrorPage from '../../components/error-page/error-page';
 
 const Page5xx = new ErrorPage({ errorCode: '500', errorText: 'Мы уже фиксим' });
 

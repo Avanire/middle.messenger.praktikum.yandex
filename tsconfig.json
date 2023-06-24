@@ -1,15 +1,27 @@
 {
   "compilerOptions": {
-    "outDir": "dist",
+    "outDir": "./dist",
     "target": "es2019",
     "declaration": false,
-    "module": "commonjs",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "noImplicitAny": true,
+    "noImplicitReturns": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "sourceMap": true,
     "strictNullChecks": true,
     "esModuleInterop": true,
-    "allowImportingTsExtensions": true
-  }
+    "removeComments": false,
+    "lib": [
+      "es2019",
+      "dom",
+      "dom.iterable"
+    ],
+    "baseUrl": ".",
+  },
+  "compileOnSave": false,
+  "exclude": ["node_modules", "dist"]
 }

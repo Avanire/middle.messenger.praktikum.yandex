@@ -1,5 +1,5 @@
-import Block from '../../core/block/block.ts';
-import { TFormWrapper } from './type.ts';
+import Block from '../../core/block/block';
+import { TFormWrapper } from './type';
 
 export default class FormWrapper extends Block {
     constructor(props: TFormWrapper) {

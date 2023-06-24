@@ -1,5 +1,5 @@
-import Block from '../../core/block/block.ts';
-import { TInputWrapperProps } from './type.ts';
+import Block from '../../core/block/block';
+import { TInputWrapperProps } from './type';
 
 export default class InputWrapper extends Block {
     constructor(props: TInputWrapperProps) {

@@ -1,10 +1,10 @@
-import Block from '../../core/block/block.ts';
-import { TProps, TSearchLogin, TUser } from '../../utils/types.ts';
-import { convertFormDataToObject } from '../../utils/utils.ts';
-import ProfileController from '../../controllers/profileController.ts';
-import store from '../../core/store.ts';
-import ChatController from '../../controllers/chatController.ts';
-import { LOGIN_REGEXP } from '../../utils/constant.ts';
+import Block from '../../core/block/block';
+import { TProps, TSearchLogin, TUser } from '../../utils/types';
+import { convertFormDataToObject } from '../../utils/utils';
+import ProfileController from '../../controllers/profileController';
+import store from '../../core/store';
+import ChatController from '../../controllers/chatController';
+import { LOGIN_REGEXP } from '../../utils/constant';
 
 export default class DeleteUserForm extends Block {
     constructor(props: TProps) {
@@ -23,7 +23,7 @@ export default class DeleteUserForm extends Block {
                     const chatId = store.getState().currentChatId as number;
                     const users = store.getState().userSearch as Array<TUser>;
 
-                    const user = users.find((item) => item.login === data.login);
+                    const user = users.find(item => item.login === data.login);
 
                     if (user) {
                         ChatController.deleteUser({

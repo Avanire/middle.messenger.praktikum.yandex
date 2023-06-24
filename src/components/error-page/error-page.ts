@@ -1,6 +1,6 @@
-import Block from '../../core/block/block.ts';
-import { TErrorPage } from './type.ts';
-import { ROUTES } from '../../utils/constant.ts';
+import Block from '../../core/block/block';
+import { TErrorPage } from './type';
+import { ROUTES } from '../../utils/constant';
 
 export default class ErrorPage extends Block {
     constructor(props: TErrorPage) {

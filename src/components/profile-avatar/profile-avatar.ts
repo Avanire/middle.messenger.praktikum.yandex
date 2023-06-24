@@ -1,8 +1,8 @@
-import Block from '../../core/block/block.ts';
+import Block from '../../core/block/block';
 import noPhoto from '../../images/profile-no-photo.svg';
-import { TProps } from '../../utils/types.ts';
-import ProfileController from '../../controllers/profileController.ts';
-import { API_URL } from '../../utils/constant.ts';
+import { TProps } from '../../utils/types';
+import ProfileController from '../../controllers/profileController';
+import { API_URL } from '../../utils/constant';
 
 export default class ProfileAvatar extends Block {
     constructor(props: TProps) {

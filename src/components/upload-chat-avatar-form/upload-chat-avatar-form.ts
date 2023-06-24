@@ -1,7 +1,7 @@
-import Block from '../../core/block/block.ts';
-import { TProps } from '../../utils/types.ts';
-import store from '../../core/store.ts';
-import ChatController from '../../controllers/chatController.ts';
+import Block from '../../core/block/block';
+import { TProps } from '../../utils/types';
+import store from '../../core/store';
+import ChatController from '../../controllers/chatController';
 
 export default class UploadChatAvatarForm extends Block {
     constructor(props: TProps) {

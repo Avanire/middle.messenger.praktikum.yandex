@@ -1,8 +1,8 @@
-import API, { AuthApi } from '../api/authApi.ts';
-import { LoginData, SigninData } from '../utils/types.ts';
-import store from '../core/store.ts';
-import { ROUTES } from '../utils/constant.ts';
-import Router from '../core/router.ts';
+import API, { AuthApi } from '../api/authApi';
+import { LoginData, SigninData } from '../utils/types';
+import store from '../core/store';
+import { ROUTES } from '../utils/constant';
+import Router from '../core/router';
 
 class AuthController {
     private api: AuthApi;

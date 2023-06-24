@@ -1,10 +1,10 @@
-import API, { ChatApi } from '../api/chatApi.ts';
+import API, { ChatApi } from '../api/chatApi';
 import {
     TAddUserData, TCreateChatData, TDataDeleteChat, TSendMessage,
-} from '../utils/types.ts';
-import store from '../core/store.ts';
-import WsTransport from '../core/wsTransport.ts';
-import ResourcesApi from '../api/resourcesApi.ts';
+} from '../utils/types';
+import store from '../core/store';
+import WsTransport from '../core/wsTransport';
+import ResourcesApi from '../api/resourcesApi';
 
 class ChatController {
     private api: ChatApi;

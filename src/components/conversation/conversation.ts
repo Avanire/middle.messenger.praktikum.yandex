@@ -1,10 +1,10 @@
-import Block from '../../core/block/block.ts';
+import Block from '../../core/block/block';
 import statusIcon from '../../images/message-delivered-icon.svg';
 import {
     TChatList, TMessage, TProps, TUser,
-} from '../../utils/types.ts';
-import withStore from '../../hocs/withStore.ts';
-import { API_URL } from '../../utils/constant.ts';
+} from '../../utils/types';
+import withStore from '../../hocs/withStore';
+import { API_URL } from '../../utils/constant';
 
 class Conversation extends Block {
     constructor(props: TProps) {
@@ -14,9 +14,19 @@ class Conversation extends Block {
     render(): string {
         const chatList = this.props.chatList as Array<TChatList>;
         const { currentChatId } = this.props;
-        const chat = chatList.find((item) => item.id === +(currentChatId as number));
+        const chat = chatList.find(item => item.id === +(currentChatId as number));
         const messages = this.props?.messages as Array<TMessage>;
         const currentUser = this.props?.user as TUser;
+
+        if (messages) {
+            setTimeout(() => {
+                const container = document.querySelector('.conversation__chat');
+                container?.scroll({
+                    top: container.scrollHeight,
+                    behavior: 'smooth',
+                });
+            }, 500)
+        }
 
         return `
             <section class="conversation">
@@ -24,7 +34,7 @@ class Conversation extends Block {
                 <div class="conversation__chat chat">
                     <div class="chat__date"></div>
                     <div class="chat__messages">
-                        ${messages ? messages.map((message) => `
+                        ${messages ? messages.map(message => `
                             <div class="chat__message chat-message ${message.user_id === currentUser.id
         ? 'chat__message--answer' : ''} ${message.file ? 'chat__message--image'
     : ''}">
@@ -49,6 +59,6 @@ class Conversation extends Block {
     }
 }
 
-const whitChats = withStore((state) => ({ ...state }));
+const whitChats = withStore(state => ({ ...state }));
 
 export default whitChats(Conversation);

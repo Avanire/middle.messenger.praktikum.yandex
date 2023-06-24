@@ -1,10 +1,10 @@
-import Block from '../../core/block/block.ts';
+import Block from '../../core/block/block';
 import {
     EMAIL_REGEXP, LOGIN_REGEXP, NAME_REGEXP, PASSWORD_REGEXP, PHONE_REGEXP, ROUTES,
-} from '../../utils/constant.ts';
-import { SigninData, TProps } from '../../utils/types.ts';
-import { convertFormDataToObject } from '../../utils/utils.ts';
-import AuthController from '../../controllers/authController.ts';
+} from '../../utils/constant';
+import { SigninData, TProps } from '../../utils/types';
+import { convertFormDataToObject } from '../../utils/utils';
+import AuthController from '../../controllers/authController';
 
 export default class SignupForm extends Block {
     constructor(props: TProps) {

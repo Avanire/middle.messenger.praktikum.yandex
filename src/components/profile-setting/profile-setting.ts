@@ -1,5 +1,5 @@
-import Block from '../../core/block/block.ts';
-import { TProfileSetting } from './type.ts';
+import Block from '../../core/block/block';
+import { TProfileSetting } from './type';
 
 export default class ProfileSetting extends Block {
     constructor(props: TProfileSetting) {

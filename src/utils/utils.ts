@@ -1,4 +1,4 @@
-import { Indexed, PlainObject, StringIndexed } from './types.ts';
+import { Indexed, PlainObject, StringIndexed } from './types';
 
 export const queryStringify = (data: StringIndexed): string | never => {
     if (typeof data !== 'object') {
