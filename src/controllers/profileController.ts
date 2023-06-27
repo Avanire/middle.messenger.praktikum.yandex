@@ -1,6 +1,6 @@
 import API, { ProfileApi } from '../api/profileApi';
 import { TChangeProfileData, TChangeProfilePass, TSearchLogin } from '../utils/types';
-import router from '../core/router';
+import router from '../core/router/router';
 import { ROUTES } from '../utils/constant';
 import store from '../core/store';
 

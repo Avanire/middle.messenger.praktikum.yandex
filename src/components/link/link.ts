@@ -1,5 +1,5 @@
 import Block from '../../core/block/block';
-import router from '../../core/router';
+import router from '../../core/router/router';
 import { TLink } from './type';
 
 export default class Link extends Block {

@@ -1,7 +1,7 @@
 import Route from './route';
-import { ROUTES } from '../utils/constant';
-import { TProps } from '../utils/types';
-import Block from './block/block';
+import { ROOT_DIV, ROUTES } from '../../utils/constant';
+import { TProps } from '../../utils/types';
+import Block from '../block/block';
 
 export type TRouteConstructor = {
     pathname: string,
@@ -94,4 +94,4 @@ class Router {
     getRoute = (pathname: string) => this.routes.find(route => route.match(pathname));
 }
 
-export default new Router('root');
+export default new Router(ROOT_DIV);

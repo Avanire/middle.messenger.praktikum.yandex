@@ -1,5 +1,5 @@
 import './styles/index.pcss';
-import Router from './core/router';
+import Router from './core/router/router';
 import { ROUTES } from './utils/constant';
 import LoginPage from './pages/login/login';
 import SignupPage from './pages/signup/signup';
@@ -11,7 +11,6 @@ import ChatPage from './pages/chat/chat';
 import AuthController from './controllers/authController';
 import store from './core/store';
 import Page5xx from './pages/5xx/5xx';
-
 
 AuthController.checkAuth().then(() => {
     Router

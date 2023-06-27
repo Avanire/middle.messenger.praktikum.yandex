@@ -38,3 +38,5 @@ export enum SOCKET_LISTENERS {
     Message = 'message',
     Error = 'error'
 }
+
+export const ROOT_DIV = 'root';

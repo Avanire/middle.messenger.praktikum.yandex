@@ -1,6 +1,6 @@
-import { HTTPMethod, TOptions } from '../utils/types';
-import { API_URL, METHODS } from '../utils/constant';
-import { queryStringify } from '../utils/utils';
+import { HTTPMethod, TOptions } from '../../utils/types';
+import { API_URL, METHODS } from '../../utils/constant';
+import { queryStringify } from '../../utils/utils';
 
 class HttpTransport {
     protected endpoint: string;

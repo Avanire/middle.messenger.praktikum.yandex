@@ -2,7 +2,7 @@ import API, { AuthApi } from '../api/authApi';
 import { LoginData, SigninData } from '../utils/types';
 import store from '../core/store';
 import { ROUTES } from '../utils/constant';
-import Router from '../core/router';
+import Router from '../core/router/router';
 
 class AuthController {
     private api: AuthApi;
