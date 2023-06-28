@@ -6,7 +6,7 @@
     "dev": "webpack serve",
     "build": "webpack --mode production",
     "start": "npm run build && node ./server.js",
-    "eslint": "eslint",
+    "eslint": "eslint ./",
     "stylelint": "stylelint src/**/*.{pcss,css}",
     "test": "cross-env NODE_ENV=test mocha --require test/babel-register.js --require test/mock.js"
   },
@@ -47,7 +47,7 @@
     "eslint-plugin-import": "2.27.5",
     "handlebars-loader": "1.7.3",
     "html-webpack-plugin": "5.5.3",
-    "husky": "^8.0.3",
+    "husky": "8.0.3",
     "jsdom": "22.1.0",
     "mini-css-extract-plugin": "2.7.6",
     "mocha": "10.2.0",
