@@ -12,8 +12,11 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm-run-all test stylelint eslint"
+      "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "*.(js|jsx|pcss)": ["npm-run-all test stylelint eslint", "git add"]
   },
   "repository": {
     "type": "git",
@@ -49,6 +52,7 @@
     "html-webpack-plugin": "5.5.3",
     "husky": "8.0.3",
     "jsdom": "22.1.0",
+    "lint-staged": "13.2.3",
     "mini-css-extract-plugin": "2.7.6",
     "mocha": "10.2.0",
     "postcss": "8.4.24",
