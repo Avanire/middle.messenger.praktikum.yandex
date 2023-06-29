@@ -4,9 +4,9 @@
   "description": "---",
   "scripts": {
     "start": "better-npm-run start",
-    "build:stable": "better-npm-run build:stable",
-    "client:build:dev": "better-npm-run client:build:dev",
-    "client:build:dev:watch": "better-npm-run client:build:dev:watch",
+    "build": "better-npm-run build:stable",
+    "dev": "better-npm-run client:build:dev",
+    "dev:watch": "better-npm-run client:build:dev:watch",
     "lint": "npm-run-all eslint stylelint",
     "eslint": "eslint ./",
     "stylelint": "stylelint src/**/*.{pcss,css}",
