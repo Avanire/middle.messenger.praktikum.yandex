@@ -11,7 +11,7 @@ const config = require('../../config');
 const paths = config.utils_path;
 const { __DEV__, __PROD__ } = config.globals;
 
-module.exports = ({entry, context, alias}) => webpackConfig => {
+module.exports = ({context, alias}) => webpackConfig => {
     if (alias) {
         console.log('Overriding alias option with', JSON.stringify(alias, null, 2));
     }
