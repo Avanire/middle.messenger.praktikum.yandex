@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "description": "---",
   "scripts": {
-    "start": "better-npm-run start",
-    "build": "better-npm-run build:stable",
-    "dev": "better-npm-run client:build:dev",
-    "dev:watch": "better-npm-run client:build:dev:watch",
+    "dev": "cross-env NODE_ENV=development webpack serve",
+    "build": "cross-env NODE_ENV=production webpack",
+    "start": "npm run build && node ./server.js",
     "lint": "npm-run-all eslint stylelint",
     "eslint": "eslint ./",
     "stylelint": "stylelint src/**/*.{pcss,css}",
@@ -91,35 +90,5 @@
   "dependencies": {
     "express": "4.18.2",
     "handlebars": "4.7.7"
-  },
-  "betterScripts": {
-    "start": {
-      "command": "npm run client:build:dev:watch",
-      "env": {
-        "NODE_ENV": "development",
-        "DEBUG": "app:*",
-        "NODE_TLS_REJECT_UNAUTHORIZED": "0"
-      }
-    },
-    "build:stable": {
-      "command": "webpack --config webpack.config.js",
-      "env": {
-        "NODE_ENV": "production"
-      }
-    },
-    "client:build:dev": {
-      "command": "webpack --config webpack.config.js",
-      "env": {
-        "NODE_ENV": "development",
-        "DEBUG": "app:*"
-      }
-    },
-    "client:build:dev:watch": {
-      "command": "webpack serve",
-      "env": {
-        "NODE_ENV": "development",
-        "DEBUG": "app:*"
-      }
-    }
   }
 }
