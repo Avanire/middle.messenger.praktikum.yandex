@@ -1,8 +1,7 @@
 FROM node:16.15.1
-RUN mkdir "app"
-WORKDIR app
+WORKDIR dist
 COPY . .
 RUN npm install
 RUN npm run build
-EXPOSE 3000
+EXPOSE 80
 CMD ["node", "server.js"]
