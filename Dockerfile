@@ -1,6 +1,8 @@
 FROM node:16.15.1
-WORKDIR /var/www
+RUN mkdir "app"
+WORKDIR app
 COPY . .
-EXPOSE 3000
 RUN npm install
-CMD npm run build
+RUN npm run build
+EXPOSE 3000
+CMD ["node", "server.js"]
