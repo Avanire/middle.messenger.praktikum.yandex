@@ -1,7 +1,10 @@
 FROM node:16.15.1
-WORKDIR dist
-COPY . .
+
+WORKDIR /app
+COPY package.json ./
 RUN npm install
+COPY . /app
 RUN npm run build
-EXPOSE 80
+
+EXPOSE 3000
 CMD ["node", "server.js"]
