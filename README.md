@@ -9,7 +9,8 @@
 - Проведена аудит установленных пакетов на актуальное и безопасное состояние.
 
 Дизайн-макет: https://www.figma.com/file/VB678Vh9RjemUmhaO0Grbt/Chat_external_link-(Copy) <br />
-Версия на Netlify: https://main--lucent-syrniki-f79600.netlify.app/
+Версия на Netlify: https://main--lucent-syrniki-f79600.netlify.app/ <br />
+Версия на Render: https://webchat-p8ni.onrender.com/
 
 Стек технологий в проекте:
 - JavaScript (TypeScript)
