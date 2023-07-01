@@ -1,5 +1,5 @@
-import Block from '../../core/block/block.ts';
-import { TProps } from '../../utils/types.ts';
+import Block from '../../core/block/block';
+import { TProps } from '../../utils/types';
 
 export default class ModalAddChatAvatar extends Block {
     constructor(props: TProps) {

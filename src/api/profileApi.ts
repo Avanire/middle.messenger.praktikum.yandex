@@ -1,5 +1,5 @@
-import BaseApi from './baseApi.ts';
-import { TChangeProfileData, TChangeProfilePass, TSearchLogin } from '../utils/types.ts';
+import BaseApi from './baseApi';
+import { TChangeProfileData, TChangeProfilePass, TSearchLogin } from '../utils/types';
 
 export class ProfileApi extends BaseApi {
     constructor() {

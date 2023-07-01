@@ -1,6 +1,6 @@
-import Block from '../../core/block/block.ts';
-import { TProps } from '../../utils/types.ts';
-import Router from '../../core/router.ts';
+import Block from '../../core/block/block';
+import { TProps } from '../../utils/types';
+import Router from '../../core/router/router';
 import arrowLeft from '../../images/arrow-left.svg';
 
 class ProfileWrapper extends Block {

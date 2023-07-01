@@ -1,6 +1,6 @@
-import { SOCKET_LISTENERS, WS_URL } from '../utils/constant.ts';
-import { TSocketData } from '../utils/types.ts';
-import store from './store.ts';
+import { SOCKET_LISTENERS, WS_URL } from '../utils/constant';
+import { TSocketData } from '../utils/types';
+import store from './store';
 
 class WsTransport {
     private userId: number;
@@ -11,7 +11,7 @@ class WsTransport {
 
     private socket: WebSocket;
 
-    private ping: number;
+    private ping: any;
 
     constructor(userId: number, chatId: number, token: string) {
         this.userId = userId;

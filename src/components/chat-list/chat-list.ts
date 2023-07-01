@@ -1,8 +1,8 @@
-import Block from '../../core/block/block.ts';
-import { convertFormDataToObject } from '../../utils/utils.ts';
-import ChatController from '../../controllers/chatController.ts';
-import { TChatList, TCreateChatData, TUser } from '../../utils/types.ts';
-import withStore from '../../hocs/withStore.ts';
+import Block from '../../core/block/block';
+import { convertFormDataToObject } from '../../utils/utils';
+import ChatController from '../../controllers/chatController';
+import { TChatList, TCreateChatData, TUser } from '../../utils/types';
+import withStore from '../../hocs/withStore';
 
 class ChatList extends Block {
     constructor(props: TChatList) {
@@ -75,6 +75,6 @@ class ChatList extends Block {
     }
 }
 
-const whitChats = withStore((state) => ({ ...state }));
+const whitChats = withStore(state => ({ ...state }));
 
 export default whitChats(ChatList);

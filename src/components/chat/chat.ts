@@ -1,7 +1,7 @@
-import Block from '../../core/block/block.ts';
-import withStore from '../../hocs/withStore.ts';
-import { TProps } from '../../utils/types.ts';
-import { ROUTES } from '../../utils/constant.ts';
+import Block from '../../core/block/block';
+import withStore from '../../hocs/withStore';
+import { TProps } from '../../utils/types';
+import { ROUTES } from '../../utils/constant';
 
 class Chat extends Block {
     constructor(props: TProps) {
@@ -28,6 +28,6 @@ class Chat extends Block {
     }
 }
 
-const whitChats = withStore((state) => ({ ...state }));
+const whitChats = withStore(state => ({ ...state }));
 
 export default whitChats(Chat);

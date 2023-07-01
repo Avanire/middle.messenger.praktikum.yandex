@@ -1,9 +1,9 @@
 import { v4 as makeUUID } from 'uuid';
 import Handlebars from 'handlebars';
-import EventBus from '../eventBus.ts';
-import { TProps } from '../../utils/types.ts';
-import { deepEquals } from '../../utils/utils.ts';
-import { EVENTS } from '../../utils/constant.ts';
+import EventBus from '../eventBus';
+import { TProps } from '../../utils/types';
+import { deepEquals } from '../../utils/utils';
+import { EVENTS } from '../../utils/constant';
 
 class Block {
     _element: HTMLElement;

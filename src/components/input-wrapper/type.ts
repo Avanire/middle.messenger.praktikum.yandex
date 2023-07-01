@@ -1,4 +1,4 @@
-import { TInput } from '../input/type.ts';
+import { TInput } from '../input/type';
 
 export type TInputWrapperProps = {
     id: string,

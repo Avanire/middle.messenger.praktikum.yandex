@@ -1,10 +1,10 @@
-import FormWrapper from '../../components/form-wrapper/form-wrapper.ts';
-import regNestedComponent from '../../core/regNestedComponent.ts';
-import Input from '../../components/input/input.ts';
-import InputWrapper from '../../components/input-wrapper/input-wrapper.ts';
-import Button from '../../components/button/button.ts';
-import SignupForm from '../../components/signup-form/signup-form.ts';
-import Link from '../../components/link/link.ts';
+import FormWrapper from '../../components/form-wrapper/form-wrapper';
+import regNestedComponent from '../../core/regNestedComponent';
+import Input from '../../components/input/input';
+import InputWrapper from '../../components/input-wrapper/input-wrapper';
+import Button from '../../components/button/button';
+import SignupForm from '../../components/signup-form/signup-form';
+import Link from '../../components/link/link';
 
 regNestedComponent('Input', Input);
 regNestedComponent('InputWrapper', InputWrapper);

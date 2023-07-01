@@ -1,6 +1,6 @@
-import EventBus from './eventBus.ts';
-import { set } from '../utils/utils.ts';
-import { StoreEvents, TStore } from '../utils/types.ts';
+import EventBus from './eventBus';
+import { set } from '../utils/utils';
+import { StoreEvents, TStore } from '../utils/types';
 
 const defaultStore: TStore = {
     user: {

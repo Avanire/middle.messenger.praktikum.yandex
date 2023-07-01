@@ -1,4 +1,4 @@
-import Block from '../../../core/block/block.ts';
+import Block from '../../../core/block/block';
 import img from '../../../images/chat-img.jpg';
 
 export default class EmptyConversation extends Block {

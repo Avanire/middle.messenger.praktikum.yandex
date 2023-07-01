@@ -1,5 +1,5 @@
-import BaseApi from './baseApi.ts';
-import { LoginData, SigninData } from '../utils/types.ts';
+import BaseApi from './baseApi';
+import { LoginData, SigninData } from '../utils/types';
 
 export class AuthApi extends BaseApi {
     constructor() {

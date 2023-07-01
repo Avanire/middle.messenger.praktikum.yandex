@@ -1,4 +1,4 @@
-import Block from './block/block.ts';
+import Block from './block/block';
 
 export default (query: string, block: Block) => {
     const root = document.getElementById(query);

@@ -1,11 +1,11 @@
-import Block from '../../core/block/block.ts';
+import Block from '../../core/block/block';
 import noPhoto from '../../images/profile-no-photo.svg';
-import { API_URL, PASSWORD_REGEXP } from '../../utils/constant.ts';
-import { TProfileChangePass } from './type.ts';
-import { convertFormDataToObject } from '../../utils/utils.ts';
-import ProfileController from '../../controllers/profileController.ts';
-import { TChangeProfilePass } from '../../utils/types.ts';
-import withStore from '../../hocs/withStore.ts';
+import { API_URL, PASSWORD_REGEXP } from '../../utils/constant';
+import { TProfileChangePass } from './type';
+import { convertFormDataToObject } from '../../utils/utils';
+import ProfileController from '../../controllers/profileController';
+import { TChangeProfilePass } from '../../utils/types';
+import withStore from '../../hocs/withStore';
 
 class ProfileChangePass extends Block {
     constructor(props: TProfileChangePass) {
@@ -72,6 +72,6 @@ class ProfileChangePass extends Block {
     }
 }
 
-const withUser = withStore((state) => ({ ...state.user }));
+const withUser = withStore(state => ({ ...state.user }));
 
 export default withUser(ProfileChangePass);

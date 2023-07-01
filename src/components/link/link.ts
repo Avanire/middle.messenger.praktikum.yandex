@@ -1,6 +1,6 @@
-import Block from '../../core/block/block.ts';
-import router from '../../core/router.ts';
-import { TLink } from './type.ts';
+import Block from '../../core/block/block';
+import router from '../../core/router/router';
+import { TLink } from './type';
 
 export default class Link extends Block {
     constructor(props: TLink) {

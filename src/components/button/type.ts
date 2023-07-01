@@ -1,4 +1,4 @@
-import { TGeneralProps } from '../../utils/types.ts';
+import { TGeneralProps } from '../../utils/types';
 
 export type TButtonProps = {
     mixin?: string,

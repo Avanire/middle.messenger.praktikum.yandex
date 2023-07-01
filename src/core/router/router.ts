@@ -1,7 +1,7 @@
-import Route from './route.ts';
-import { ROUTES } from '../utils/constant.ts';
-import { TProps } from '../utils/types.ts';
-import Block from './block/block.ts';
+import Route from './route';
+import { ROOT_DIV, ROUTES } from '../../utils/constant';
+import { TProps } from '../../utils/types';
+import Block from '../block/block';
 
 export type TRouteConstructor = {
     pathname: string,
@@ -91,7 +91,7 @@ class Router {
         this.history.forward();
     };
 
-    getRoute = (pathname: string) => this.routes.find((route) => route.match(pathname));
+    getRoute = (pathname: string) => this.routes.find(route => route.match(pathname));
 }
 
-export default new Router('root');
+export default new Router(ROOT_DIV);

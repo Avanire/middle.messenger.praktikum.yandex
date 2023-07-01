@@ -1,4 +1,4 @@
-import BaseApi from './baseApi.ts';
+import BaseApi from './baseApi';
 
 class ResourcesApi extends BaseApi {
     constructor() {

@@ -1,5 +1,5 @@
-import Block from '../../../core/block/block.ts';
-import { TProps } from '../../../utils/types.ts';
+import Block from '../../../core/block/block';
+import { TProps } from '../../../utils/types';
 import photoIcon from '../../../images/photo-video-icon.svg';
 import clipImg from '../../../images/clip.svg';
 

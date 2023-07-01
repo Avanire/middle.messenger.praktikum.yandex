@@ -1,10 +1,10 @@
-import Block from '../../core/block/block.ts';
+import Block from '../../core/block/block';
 import noPhoto from '../../images/no-photo.svg';
-import { TChatList } from '../../utils/types.ts';
+import { TChatList } from '../../utils/types';
 import dots from '../../images/dots.svg';
-import ChatController from '../../controllers/chatController.ts';
-import store from '../../core/store.ts';
-import { API_URL } from '../../utils/constant.ts';
+import ChatController from '../../controllers/chatController';
+import store from '../../core/store';
+import { API_URL } from '../../utils/constant';
 
 class PersonChat extends Block {
     constructor(props: TChatList) {
@@ -29,7 +29,8 @@ class PersonChat extends Block {
     }
 
     openModal(e: MouseEvent) {
-        const modal = document.querySelector('.person-chat__additional-menu');
+        const target = e.currentTarget as HTMLElement;
+        const modal = target.nextElementSibling;
         modal?.classList.toggle('person-chat__additional-menu--active');
         e.stopPropagation();
     }

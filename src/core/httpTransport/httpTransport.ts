@@ -1,6 +1,6 @@
-import { HTTPMethod, TOptions } from '../utils/types.ts';
-import { API_URL, METHODS } from '../utils/constant.ts';
-import { queryStringify } from '../utils/utils.ts';
+import { HTTPMethod, TOptions } from '../../utils/types';
+import { API_URL, METHODS } from '../../utils/constant';
+import { queryStringify } from '../../utils/utils';
 
 class HttpTransport {
     protected endpoint: string;
@@ -44,7 +44,7 @@ class HttpTransport {
             xhr.open(method, isGetMethod && !!data ? `${url}${queryStringify(data)}` : url);
 
             if (headers) {
-                Object.keys(headers).forEach((key) => {
+                Object.keys(headers).forEach(key => {
                     xhr.setRequestHeader(key, headers[key]);
                 });
             }

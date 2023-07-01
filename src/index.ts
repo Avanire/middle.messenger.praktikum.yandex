@@ -1,15 +1,16 @@
-import Router from './core/router.ts';
-import { ROUTES } from './utils/constant.ts';
-import LoginPage from './pages/login/login.ts';
-import SignupPage from './pages/signup/signup.ts';
-import ProfilePage from './pages/profile/profile.ts';
-import ProfileChangePassPage from './pages/profile/profile-change-pass/profile-change-pass.ts';
-import ProfileEditPage from './pages/profile/profile-edit/profile-edit.ts';
-import Page404 from './pages/404/404.ts';
-import ChatPage from './pages/chat/chat.ts';
-import AuthController from './controllers/authController.ts';
-import store from './core/store.ts';
-import Page5xx from './pages/5xx/5xx.ts';
+import './styles/index.pcss';
+import Router from './core/router/router';
+import { ROUTES } from './utils/constant';
+import LoginPage from './pages/login/login';
+import SignupPage from './pages/signup/signup';
+import ProfilePage from './pages/profile/profile';
+import ProfileChangePassPage from './pages/profile/profile-change-pass/profile-change-pass';
+import ProfileEditPage from './pages/profile/profile-edit/profile-edit';
+import Page404 from './pages/404/404';
+import ChatPage from './pages/chat/chat';
+import AuthController from './controllers/authController';
+import store from './core/store';
+import Page5xx from './pages/5xx/5xx';
 
 AuthController.checkAuth().then(() => {
     Router

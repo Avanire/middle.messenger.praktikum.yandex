@@ -1,9 +1,9 @@
 import {
     Indexed, StoreEvents, TProps, TStore,
-} from '../utils/types.ts';
-import Block from '../core/block/block.ts';
-import store from '../core/store.ts';
-import { deepEquals } from '../utils/utils.ts';
+} from '../utils/types';
+import Block from '../core/block/block';
+import store from '../core/store';
+import { deepEquals } from '../utils/utils';
 
 const withStore = (
     mapStateToProps: (state: TStore) => Indexed,

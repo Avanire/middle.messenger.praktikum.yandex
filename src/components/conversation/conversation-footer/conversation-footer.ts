@@ -1,10 +1,10 @@
-import Block from '../../../core/block/block.ts';
-import { MESSAGE_REGEXP } from '../../../utils/constant.ts';
-import { TProps } from '../../../utils/types.ts';
+import Block from '../../../core/block/block';
+import { MESSAGE_REGEXP } from '../../../utils/constant';
+import { TProps } from '../../../utils/types';
 import arrowRight from '../../../images/arrow-right.svg';
-import { convertFormDataToObject } from '../../../utils/utils.ts';
-import ChatController from '../../../controllers/chatController.ts';
-import store from '../../../core/store.ts';
+import { convertFormDataToObject } from '../../../utils/utils';
+import ChatController from '../../../controllers/chatController';
+import store from '../../../core/store';
 
 export default class ConversationFooter extends Block {
     constructor(props: TProps) {

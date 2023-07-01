@@ -1,5 +1,5 @@
-import BaseApi from './baseApi.ts';
-import { TAddUserData, TCreateChatData, TDataDeleteChat } from '../utils/types.ts';
+import BaseApi from './baseApi';
+import { TAddUserData, TCreateChatData, TDataDeleteChat } from '../utils/types';
 
 export class ChatApi extends BaseApi {
     constructor() {
